@@ -21,9 +21,13 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | Feel free to use them in the tasks! 😃 I would _really_ appreciate a reference to this repo, I gether the tasks and solutions and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! 🎉🎉🎉 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-<h5 align="left"><i>Please join my discord channel<i></h5>
+<h5 align="center"><i>Please join my discord channel<i></h5>
+
+<h5 align="center">
 
 [![Discord](https://img.shields.io/discord/1027831568745648198?style=for-the-badge&logo=discord&logoColor=white&label=Discord&labelColor=%235865F2)](https://discord.gg/FMTkTe7q)
+
+</h5>
 
 ---
 
