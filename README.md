@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="60" src="https://github.com/tsotneforester/infiniteJSTasks/assets/79293287/01ec23db-35d8-48c2-b39c-57c1b9a025d3">
+  <img height="260" src="https://github.com/tsotneforester/infiniteJSTasks/assets/79293287/01ec23db-35d8-48c2-b39c-57c1b9a025d3">
   <h1>🔰︱𝗶̲̅𝗻̲̅𝗳̲̅𝗶̲̅𝗻̲̅𝗶̲̅𝘁̲̅𝗲̲̅𝗝̲̅𝗦̲̅︱🔰</h1>
 </div>
 
