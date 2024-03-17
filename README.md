@@ -33,7 +33,7 @@ Here is a simple footnote[^1].
 
 A footnote can also have multiple lines[^2].
 
-###### 1. What's the output?
+### 🟢 02 - Super Mario
 
 Do you remember Nintendo’s Super Mario Brothers? Mario must ascend a bunch of right-aligned, left-aligned pyramid of blocks. You must write function, that will receive number from 1 to 9 and build that height pyramids in console, use "#" as building block.
 
