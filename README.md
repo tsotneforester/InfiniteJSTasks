@@ -170,3 +170,500 @@ function caseToggler(string) {
 </details>
 
 ---
+
+### 🟢 05 - Duplicate
+
+```javascript
+const cars = ["bmw", "opel", "lada", "opel", "BMW"];
+console.log(dublicateRemover(cars)); // ['bmw', 'opel', 'lada']
+
+function dublicateRemover(array) {
+  //Write a function to remove duplicate items from array (case insensitivity) using/not using set
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function dublicateRemover(array) {
+  let newarray = array.map((e) => {
+    return e.toLowerCase();
+  });
+  let dupChars = newarray.filter((c, index) => {
+    return newarray.indexOf(c) === index;
+  });
+
+  return dupChars;
+}
+
+function dublicateRemover(array) {
+  const mySet = new Set();
+  for (let elem of array) {
+    mySet.add(elem.toLowerCase());
+  }
+  return [...mySet];
+}
+```
+
+</details>
+
+---
+
+### 🟢 06 - Dublicate
+
+```javascript
+const nums = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7];
+console.log(dublicateFinder(nums)); //["4", "7"];
+
+function dublicateFinder(arr) {
+  //Write a function to get array of duplicate values in array.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function dublicateFinder(arr) {
+  let result = arr.filter((e, index) => {
+    return arr.indexOf(e) !== index;
+  });
+  return [...new Set(result)];
+}
+```
+
+</details>
+
+---
+
+### 🟡 07 - Aggregate
+
+```javascript
+const num1 = [1, 25, 0, 8, 9];
+const num2 = [3, 5, 6, 7, 8];
+const num3 = [3, 13];
+console.log(aggregrate(num1, num2, num3));
+//[7, 43, 6, 15, 17]
+
+function aggregrate(...arr) {
+  //write a function to compute the sum of each individual index value from the given arrays.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function aggregrate(...arr) {
+  let args = [...arr]; // arguments array
+  let arrayLengths = args.map((e) => {
+    return e.length;
+  }); // array of argument array lengthes
+
+  let padLength = Math.max(...arrayLengths);
+
+  const AggArray = Array.from({ length: padLength }, (_, i) => {
+    return 0;
+  }); // [0, 0, 0, 0, 0]
+
+  for (let i = 0; i < padLength; i++) {
+    args.forEach((e) => {
+      AggArray[i] += e[i] || 0;
+    });
+  }
+
+  return AggArray;
+}
+
+function aggregrate(...n) {
+  const array = [];
+  for (let i = 0; i < n.length; i++) {
+    for (let y = 0; y < n[i].length; y++) {
+      array[y] === undefined ? array.push(0) : null;
+      array[y] += n[i][y];
+    }
+  }
+  return array;
+}
+```
+
+</details>
+
+---
+
+### 🟢 08 - Union
+
+```javascript
+const num1 = [1, 2, 3];
+const num2 = [6, 2, 1];
+const num3 = [8, 2, 1];
+const num4 = [3, 5, 1];
+console.log(union(num1, num2, num3, num4)); // [1, 2, 3, 5, 6, 8]
+
+function union(...arr) {
+  //Write a function to compute the union of given arrays with only unique items.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function union(...arr) {
+  let newSet = new Set([...arr].flat());
+  return [...newSet];
+}
+```
+
+</details>
+
+---
+
+### 🟢 09 - Numberify
+
+```javascript
+const array = [NaN, 0, 15, false, -22, "", undefined, 47, null, [5, 7]];
+console.log(numberify(array)); //[0, 15, -22, 47]
+
+function numberify(arr) {
+  //Write a function to retrieve only numbers from given array.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function numberify(arr) {
+  return arr.filter((e) => {
+    return typeof e === "number" && !isNaN(e);
+  });
+}
+```
+
+</details>
+
+---
+
+### 🟢 10 - Remove Item
+
+```javascript
+const num = [2, 5, 9, 7, 8, 5, 6];
+console.log(removeItem(num, 5)); // [2, 9, 7, 8, 6];
+
+function removeItem(array, item) {
+  //Write a function to remove a specified item from given array.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function removeItem(array, item) {
+  return array.filter((elem) => elem !== item);
+}
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
+
+### 🟢 02 - Super Mario
+
+```javascript
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+```
+
+</details>
+
+---
