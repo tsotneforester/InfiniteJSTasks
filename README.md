@@ -27,6 +27,8 @@ Please join my discord channel
 | Feel free to use them in a project! 😃 I would _really_ appreciate a reference to this repo, I create the questions and explanations (yes I'm sad lol) and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
+:octocat: :rabbit: :alien: :+1: :bee: :bell: :ghost: :bulb: :imp:
+
 ###### 1. What's the output?
 
 ```javascript
