@@ -16,10 +16,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 </p>
 
 > [!NOTE]  
-> This repo was created in 2024, the tasks provided here are not based on the JavaScript syntax and behavior only, but any other languages can possibly handle them. Since JavaScript is my native programming language and most preferable one and since it as well as my knowledge has been constantly evolving, there are newer language features, newer and better solutions to problems here.
-
-| Feel free to use them in the tasks! 😃 I would _really_ appreciate a reference to this repo, I gether the tasks and solutions and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! 🎉🎉🎉 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+> This repo was created in 2024, the tasks provided here are not based on the JavaScript syntax and behavior only, but any other languages can possibly handle them. Since JavaScript is my native programming language and most preferable one and since it as well as my knowledge has been constantly evolving, there are newer language features, newer and better solutions to problems here. Feel free to use them in the tasks! 😃 I would _really_ appreciate a reference to this repo, I gether the tasks and solutions and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! 🎉🎉🎉
 
 <h5 align="center"><i>Please join my discord channel<i></h5>
 
