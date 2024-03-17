@@ -28,7 +28,11 @@ Please join my discord channel
 ### 🟢 01 - Hello Universe!
 
 ```javascript
+console.log(sayHello()); // Hello Universe!
 
+function sayHello() {
+  //Write a function to generate greeting to the whole universe
+}
 ```
 
 <details><summary><b>Answer</b></summary>
