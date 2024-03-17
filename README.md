@@ -18,9 +18,9 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 > [!NOTE]  
 > This repo was created in 2024, the tasks provided here are not based on the JavaScript syntax and behavior only, but any other languages can possibly handle them. Since JavaScript is my native programming language and most preferable one and since it as well as my knowledge has been constantly evolving, there are newer language features, newer and better solutions to problems here.
 
-![Discord](https://img.shields.io/discord/1027831568745648198)
+Please join my discord channel
 
-[![Static Badge](https://img.shields.io/badge/Gitea-609926.svg?style=for-the-badge&logo=Gitea&logoColor=white)](https://gpx.ge/)
+[![Discord](https://img.shields.io/discord/1027831568745648198?style=for-the-badge&logo=discord&logoColor=white&label=Discord&labelColor=%235865F2)](https://discord.gg/FMTkTe7q)
 
 ###### 1. What's the output?
 
