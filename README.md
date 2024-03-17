@@ -22,16 +22,26 @@ Please join my discord channel
 
 [![Discord](https://img.shields.io/discord/1027831568745648198?style=for-the-badge&logo=discord&logoColor=white&label=Discord&labelColor=%235865F2)](https://discord.gg/FMTkTe7q)
 
-> blockquote
-
 | Feel free to use them in a project! 😃 I would _really_ appreciate a reference to this repo, I create the questions and explanations (yes I'm sad lol) and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-:octocat: :rabbit: :alien: :+1: :bee: :bell: :ghost: :bulb: :imp:
+### 🟢 01 - Hello Universe!
 
-Here is a simple footnote[^1].
+```javascript
 
-A footnote can also have multiple lines[^2].
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function sayHello() {
+  return "Hello Universe!";
+}
+```
+
+</details>
+
+---
 
 ### 🟢 02 - Super Mario
 
