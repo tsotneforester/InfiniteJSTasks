@@ -639,7 +639,7 @@ function convertTitleCase(string) {
 ### 🟢 19 - Trimmer
 
 ```javascript
-let string = "   This  is   a    test.  ";
+const string = "   This  is   a    test.  ";
 
 console.log(trimmer(string)); //This is a test.
 
