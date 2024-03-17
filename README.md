@@ -35,37 +35,75 @@ A footnote can also have multiple lines[^2].
 
 ###### 1. What's the output?
 
-```javascript
-function sayHi() {
-  console.log(name);
-  console.log(age);
-  var name = "Lydia";
-  let age = 21;
-}
+Do you remember Nintendo’s Super Mario Brothers? Mario must ascend a bunch of right-aligned, left-aligned pyramid of blocks. You must write function, that will receive number from 1 to 9 and build that height pyramids in console, use "#" as building block.
 
-sayHi();
+```javascript
+buildRightAligned(5);
+// #
+// ##
+// ###
+// ####
+// #####
+buildLeftAligned(5);
+//     #
+//    ##
+//   ###
+//  ####
+// #####
+buildPyramid(5);
+//     ##
+//    ####
+//   ######
+//  ########
+// ##########
 ```
 
-- A: `Lydia` and `undefined`
-- B: `Lydia` and `ReferenceError`
-- C: `ReferenceError` and `21`
-- D: `undefined` and `ReferenceError`
-
 <details><summary><b>Answer</b></summary>
-<p>
+```javascript
+function buildRightAligned(n) {
+  let node = "";
+  for (let i = 0; i < n; i++) {
+    node += "#";
+    console.log(node);
+  }
+}
 
-#### Answer: D
+function buildLeftAligned(n) {
+for (let i = 1; i <= n; i++) {
+let node = "";
+for (let ii = 1; ii <= n - i; ii++) {
+node += " ";
+}
 
-Within the function, we first declare the `name` variable with the `var` keyword. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of `undefined`, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the `name` variable, so it still holds the value of `undefined`.
+    for (let ii = 1; ii <= i; ii++) {
+      node += "#";
+    }
+    console.log(node);
 
-Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`.
+}
+}
 
-</p>
+function buildPyramid(n) {
+for (let i = 1; i <= n; i++) {
+let node = "";
+for (let ii = 1; ii <= n - i; ii++) {
+node += " ";
+}
+
+    for (let ii = 1; ii <= i; ii++) {
+      node += "#";
+    }
+
+    for (let ii = 1; ii <= i; ii++) {
+      node += "#";
+    }
+    console.log(node);
+
+}
+}
+
+```
 </details>
 
 ---
-
-[^1]: My reference.
-[^2]:
-    To add line breaks within a footnote, prefix new lines with 2 spaces.
-    This is a second line.
+```
