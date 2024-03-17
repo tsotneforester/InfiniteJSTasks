@@ -103,3 +103,70 @@ function buildPyramid(n) {
 ```
 
 </details>
+
+### 🟢 03 - Mode
+
+```javascript
+const arr = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+console.log(getMode(arr)); //a - 5 times
+
+function getMode(array) {
+  //Write a function to find the most frequent item of an array.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function getMode(array) {
+  let set1 = new Set(array);
+  let uniqArr = [...set1]; // [3, 'a', 2, 4, 9]
+
+  let countArr = [];
+  for (let i = 0; i < uniqArr.length; i++) {
+    let counter = 0;
+    for (let e = 0; e < arr.length; e++) {
+      if (uniqArr[i] == arr[e]) {
+        counter++;
+      }
+    }
+    countArr.push(counter); // [4, 5, 2, 1, 1]
+  }
+
+  let maxNum = Math.max(...countArr); //5
+  let placeNum = countArr.findIndex((e) => e == maxNum); //1
+
+  return `${uniqArr[placeNum]} - ${maxNum} times`;
+}
+```
+
+</details>
+
+---
+
+### 🟢 04 - Toggle Case
+
+```javascript
+let str = "Brown Fox";
+console.log(caseToggler(str)); //bROWN fOX
+
+function caseToggler(string) {
+  //Write a function which accepts string as argument and swaps the case of each character.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function caseToggler(string) {
+  const array = [...string];
+  const newArray = Array.from(array, (e) => {
+    return e == e.toUpperCase() ? e.toLowerCase() : e.toUpperCase();
+  });
+  return newArray.join("");
+}
+```
+
+</details>
+
+---
