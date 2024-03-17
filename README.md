@@ -313,7 +313,7 @@ const num1 = [1, 2, 3];
 const num2 = [6, 2, 1];
 const num3 = [8, 2, 1];
 const num4 = [3, 5, 1];
-console.log(union(num1, num2, num3, num4)); // [1, 2, 3, 5, 6, 8]
+console.log(union(num1, num2, num3, num4)); // [1, 2, 3, 6, 8, 5]
 
 function union(...arr) {
   //Write a function to compute the union of given arrays with only unique items.
@@ -488,7 +488,7 @@ function vlookup(ids, data) {
 
 ```javascript
 const numbers = [23, 42, 14, 57, 67, 69, 78];
-console.log(getOddIndex(numbers)); //[23, 57, 67, 69]
+console.log(getOddIndex(numbers)); //[0, 3, 4, 5]
 
 function getOddIndex(arr) {
   //Write a function to generate array of indexes of odd numbers in given array
