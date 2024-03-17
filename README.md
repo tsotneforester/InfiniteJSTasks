@@ -17,6 +17,8 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 ![Discord](https://img.shields.io/discord/1027831568745648198)
 
+![Static Badge](https://img.shields.io/badge/build-passing-brightgreen?logo=pinescript&link=https%3A%2F%2Fgrammarchecker.io%2F)
+
 ###### 1. What's the output?
 
 ```javascript
