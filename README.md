@@ -59,6 +59,7 @@ buildPyramid(5);
 ```
 
 <details><summary><b>Answer</b></summary>
+
 ```javascript
 function buildRightAligned(n) {
   let node = "";
@@ -69,26 +70,25 @@ function buildRightAligned(n) {
 }
 
 function buildLeftAligned(n) {
-for (let i = 1; i <= n; i++) {
-let node = "";
-for (let ii = 1; ii <= n - i; ii++) {
-node += " ";
-}
+  for (let i = 1; i <= n; i++) {
+    let node = "";
+    for (let ii = 1; ii <= n - i; ii++) {
+      node += " ";
+    }
 
     for (let ii = 1; ii <= i; ii++) {
       node += "#";
     }
     console.log(node);
-
-}
+  }
 }
 
 function buildPyramid(n) {
-for (let i = 1; i <= n; i++) {
-let node = "";
-for (let ii = 1; ii <= n - i; ii++) {
-node += " ";
-}
+  for (let i = 1; i <= n; i++) {
+    let node = "";
+    for (let ii = 1; ii <= n - i; ii++) {
+      node += " ";
+    }
 
     for (let ii = 1; ii <= i; ii++) {
       node += "#";
@@ -98,12 +98,8 @@ node += " ";
       node += "#";
     }
     console.log(node);
-
+  }
 }
-}
-
 ```
+
 </details>
-
----
-```
