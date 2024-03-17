@@ -18,12 +18,14 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 > [!NOTE]  
 > This repo was created in 2024, the tasks provided here are not based on the JavaScript syntax and behavior only, but any other languages can possibly handle them. Since JavaScript is my native programming language and most preferable one and since it as well as my knowledge has been constantly evolving, there are newer language features, newer and better solutions to problems here.
 
-| Feel free to use them in the tasks! 😃 I would _really_ appreciate a reference to this repo, I gether the tasks and solutions and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feel free to use them in the tasks! 😃 I would _really_ appreciate a reference to this repo, I gether the tasks and solutions and the community helps me so much to maintain and improve it! 💪🏼 Thank you and have fun! 🎉🎉🎉 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 <h5 align="left"><i>Please join my discord channel<i></h5>
 
 [![Discord](https://img.shields.io/discord/1027831568745648198?style=for-the-badge&logo=discord&logoColor=white&label=Discord&labelColor=%235865F2)](https://discord.gg/FMTkTe7q)
+
+---
 
 ### 🟢 01 - Hello Universe!
 
