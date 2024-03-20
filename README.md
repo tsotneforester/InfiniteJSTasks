@@ -188,7 +188,7 @@ function caseToggler(string) {
 
 ---
 
-### 🟢 05 - Duplicate
+### 🟢 05 - iDuplicate
 
 ```javascript
 const cars = ["bmw", "opel", "lada", "opel", "BMW"];
@@ -226,7 +226,7 @@ function dublicateRemover(array) {
 
 ---
 
-### 🟢 06 - Dublicate
+### 🟢 06 - Dublicate Finder
 
 ```javascript
 const nums = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7];
