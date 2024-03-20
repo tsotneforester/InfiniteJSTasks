@@ -1049,6 +1049,36 @@ function bulkOverlaping(arr) {
 
 ---
 
+### 🟢 29 - Anagrams
+
+An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+```javascript
+const word1 = "listen";
+const word2 = "silent";
+console.log(areAnagrams(word1, word2)); // true
+
+function areAnagrams(word1, word2) {
+  //Write a function to find if given words are anagrams.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function areAnagrams(word1, word2) {
+  const sortedWord1 = [...word1.toLowerCase()].sort().join("");
+  const sortedWord2 = [...word2.toLowerCase()].sort().join("");
+
+  return sortedWord1 === sortedWord2;
+}
+
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
