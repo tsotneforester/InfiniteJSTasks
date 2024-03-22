@@ -1079,6 +1079,39 @@ function areAnagrams(word1, word2) {
 
 ---
 
+### 🟢 30 - Sum Up to Zero
+
+```javascript
+const array = [-5, -4, -3, 0, 2, 5, 8, 9];
+console.log(hasZeroSumPair(array));
+
+function hasZeroSumPair(arr) {
+  //Write a function that will return boolean "TRUE", if it finds 2 numbers in given array, which sums up to zero
+  //consider: -0 === 0 is true in JS
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+
+function hasZeroSumPair(arr) {
+  for (let num of arr) {
+    if (num === 0 && num === -0) continue;
+    // as (-0 === 0) is true in JS, we must skip 0 in iteration
+
+    if (arr.includes(-num)) {
+      return true;
+    }
+  }
+  return false;
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
