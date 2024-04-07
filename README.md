@@ -1128,6 +1128,7 @@ function objectify(arr1, arr2) {
 
 <details><summary><b>Answer</b></summary>
 1. Nice-n-easy solution
+  
 ```javascript
 function objectify(arr1, arr2) {
   let obj = {};
@@ -1138,7 +1139,7 @@ function objectify(arr1, arr2) {
 }
 ```
 
-2. 
+2. More advanced technics
 ```javascript
 function objectify(arr1, arr2) {
   return Object.fromEntries(
