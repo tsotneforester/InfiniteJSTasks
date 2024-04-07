@@ -1112,6 +1112,48 @@ function hasZeroSumPair(arr) {
 
 ---
 
+### 🟢 31 - Objectify
+
+```javascript
+const keys = ["name", "age", "country"];
+const values = ["Tom", 29, "Poland"];
+
+console.log(objectify(keys, values));
+// {name: 'Tom', age: 29, country: 'Poland'}
+
+function objectify(arr1, arr2) {
+  //Write a function that creates object with key names for given 1st array and values from given 2nd array
+}
+```
+
+<details><summary><b>Answer</b></summary>
+1. Nice-n-easy solution
+```javascript
+function objectify(arr1, arr2) {
+  let obj = {};
+  arr1.forEach((e, i) => {
+    obj[e] = arr2[i];
+  });
+  return obj;
+}
+```
+
+2. 
+```javascript
+function objectify(arr1, arr2) {
+  return Object.fromEntries(
+    arr1.reduce((acc, __, i) => {
+      acc.push([arr1[i], arr2[i]]);
+      return acc;
+    }, [])
+  );
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
