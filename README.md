@@ -1204,7 +1204,7 @@ pattern approach
   
 ```javascript
 function isEqual(arr1, arr2) {
-  //avoid loop execution when empty and not equly-sized arrays
+  //avoid execution when not equly-sized arrays
   if (arr1.length != arr2.length) return false;
 
   const frequencies = {};
