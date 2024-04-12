@@ -1155,6 +1155,79 @@ function objectify(arr1, arr2) {
 
 ---
 
+### 🟢 32 - Equal Arrays
+
+```javascript
+let array1 = [1, 5, 3, 2];
+let array2 = [5, 2, 3, 1];
+
+console.log(isEqual(array1, array2));
+
+function isEqual(arr1, arr2) {
+  //write a function, that checks if 2 number arrays are equal
+}
+```
+
+<details><summary><b>Answer</b></summary>
+more ad hoc or improvised approach
+  
+```javascript
+function isEqual(arr1, arr2) {
+  //avoid loop execution when empty and not equly-sized arrays
+  if (arr1.length != arr2.length) return false;
+  if (!arr1.length) return true;
+
+  let status = true;
+
+  let temp1 = [...arr1];
+  let temp2 = [...arr2];
+
+  const LENGTH = temp1.length;
+
+  temp1.sort(function (a, b) {
+    return b - a;
+  });
+
+  temp2.sort(function (a, b) {
+    return b - a;
+  });
+
+  for (let i = 0; i < LENGTH; i++) {
+    if (temp1[i] == temp2[i]) continue;
+    status = false;
+  }
+
+  return status;
+}
+```
+pattern approach
+  
+```javascript
+function isEqual(arr1, arr2) {
+  //avoid loop execution when empty and not equly-sized arrays
+  if (arr1.length != arr2.length) return false;
+
+  const frequencies = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    let element1 = arr1[i];
+    let element2 = arr2[i];
+
+    frequencies[element1] = (frequencies[element1] || 0) + 1;
+    frequencies[element2] = (frequencies[element2] || 0) - 1;
+  }
+
+  for (let key in frequencies) {
+    if (frequencies[key] !== 0) return false;
+  }
+  return true;
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
