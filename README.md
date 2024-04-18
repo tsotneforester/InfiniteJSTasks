@@ -1228,6 +1228,55 @@ function isEqual(arr1, arr2) {
 
 ---
 
+### 🔴 33 - Spam Detector
+
+```javascript
+const inbox = [
+  { from: "alice@beer.com", to: "bob@code.com", subject: "Urgent Meeting Required", body: "We need to discuss the project milestones." },
+  { from: "carol@tech.com", to: "dan@developer.com", subject: "System Update Report", body: "Please fix this critical bug ASAP." },
+  { from: "eve@company.com", to: "frank@client.com", subject: "Project Deadline Approaching", body: "Please review the project timeline." },
+  { from: "grace@management.com", to: "beer@project.com", subject: "Quick Sync", body: "We are out of supplies, please restock!" },
+  { from: "ivan@development.com", to: "judy@bugs.com", subject: "Code Review", body: "Let’s ensure our code is clean and maintainable." },
+  { from: "kyle@support.com", to: "laura@customer.com", subject: "Update on Support Ticket", body: "Your issue will be resolved before the bedtime." },
+];
+const spam = ["beer", "bug", "deadline"];
+
+console.log(spamDetector(spam, inbox));
+//all objects get 'spam: true' but LAST ONE, as none on the words are found in last object
+
+function spamDetector(words, objects) {
+  // Write a function with 2 arguments (array of words and array of objects) that will check every object properties against given words (case insensitive) and if found, will add "spam:true" property to that object
+  //TIP: This is all about loops, as we have 3 words, 6 objects and 4 properties in each, total of 72 iterations will occur. Try to avoid excessive ones by 2 way optimization: 1) when iterating object properties, with early match, there is no need to go through all properties 2) as object already has 'spam: true' property, we can skip it.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function spamDetector(words, objects) {
+  let status = true;
+
+  for (const word of words) {
+    for (const object of objects) {
+      if (object.spam == undefined) {
+        for (const key in object) {
+          status = String(object[key]).toLowerCase().includes(word);
+          if (status) break;
+        }
+        if (status) {
+          object.spam = status;
+        }
+      }
+    }
+  }
+  return objects;
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
