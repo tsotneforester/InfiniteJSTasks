@@ -1277,6 +1277,40 @@ function spamDetector(words, objects) {
 
 ---
 
+
+
+### 🟢 34 - Reverse Array
+
+```javascript
+const arr = ["A", "C", "B"];
+console.log(reverseArray(arr));
+// → ["B", "C", "A"];
+
+function reverseArray(arr) {
+  // Write a function which will reverse sequence of array items
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function reverseArray(arr) {
+  let newArr = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    newArr.push(arr[i]);
+  }
+
+  return newArr;
+}
+```
+
+</details>
+
+---
+
+
+
 <!--
 
 ### 🟢
