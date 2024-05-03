@@ -1288,6 +1288,7 @@ console.log(reverseArray(arr));
 
 function reverseArray(arr) {
   // Write a function which will reverse sequence of array items
+  // single-line solution can be applied ))
 }
 ```
 
