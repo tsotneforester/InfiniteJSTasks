@@ -1304,7 +1304,12 @@ function reverseArray(arr) {
   return newArr;
 }
 ```
-
+super short version
+```javascript
+function reverseArray(arr) {
+  return arr.map((_, i, arr) => arr[arr.length - i - 1]);
+}
+```
 </details>
 
 ---
