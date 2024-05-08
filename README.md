@@ -1315,6 +1315,31 @@ function reverseArray(arr) {
 
 ---
 
+### 🟢 35 - Reverse String
+
+```javascript
+const string = "i'm gonna win";
+console.log(stringReverse(string)); //niw annog m'i
+
+function stringReverse(str) {
+  // Write a function which will reverse given string
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function stringReverse(str) {
+  return str
+    .split("")
+    .map((_, i, r) => r[r.length - i - 1])
+    .join("");
+}
+```
+
+</details>
+
+---
 
 
 <!--
