@@ -1340,6 +1340,28 @@ function stringReverse(str) {
 
 ---
 
+### 🟢 36 - Palindrome Word
+
+```javascript
+function isPalindrome(word) {
+  // Write a function which will check if given word is a palindrome
+}
+
+console.log(isPalindrome("rotator")); // true
+console.log(isPalindrome("hello")); // false
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function isPalindrome(word) {
+  return word === word.split("").reverse().join("");
+}
+```
+
+</details>
+
+---
 
 <!--
 
