@@ -1287,8 +1287,7 @@ console.log(reverseArray(arr));
 // → ["B", "C", "A"];
 
 function reverseArray(arr) {
-  // Write a function which will reverse sequence of array items
-  // single-line solution can be applied ))
+  // Write a function which will reverse sequence of array items. reverse() is too simple, isn't it?
 }
 ```
 
@@ -1332,7 +1331,7 @@ function stringReverse(str) {
 function stringReverse(str) {
   return str
     .split("")
-    .map((_, i, r) => r[r.length - i - 1])
+    .map((_, i, r) => r[r.length - i - 1]) // .reverse()
     .join("");
 }
 ```
