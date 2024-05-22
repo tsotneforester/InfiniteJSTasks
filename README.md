@@ -1363,7 +1363,7 @@ function isPalindrome(word) {
 
 ---
 
-### 🟢 37 - Sliding Sum
+### 🟡 37 - Sliding Sum
 
 ```javascript
 const array = [1, 3, 7, 5, 6, 4, 9, 1];
