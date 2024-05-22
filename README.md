@@ -238,13 +238,25 @@ function dublicateFinder(arr) {
 ```
 
 <details><summary><b>Answer</b></summary>
-
+  
+version 1
 ```javascript
 function dublicateFinder(arr) {
   let result = arr.filter((e, index) => {
     return arr.indexOf(e) !== index;
   });
   return [...new Set(result)];
+}
+```
+version 2
+```javascript
+function dublicateFinder(arr) {
+  return arr.reduce((acc, cur, i) => {
+    if (arr.lastIndexOf(cur) !== i && !acc.includes(cur)) {
+      acc.push(cur);
+    }
+    return acc;
+  }, []);
 }
 ```
 
