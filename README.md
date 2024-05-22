@@ -1363,6 +1363,90 @@ function isPalindrome(word) {
 
 ---
 
+### 🟢 37 - Sliding Sum
+
+```javascript
+const array = [1, 3, 7, 5, 6, 4, 9, 1];
+const num = 4;
+
+console.log(maxSubarraySum(array, num)); // 24
+
+function stringReverse(str) {
+  // Write a function which will calculate from given array and integer maximum given-number-sized-subarray sum
+  //[1, 3, 7, 5] - 16 ❌
+  //[3, 7, 5, 6] - 21 ❌
+  //[7, 5, 6, 4] - 22 ❌
+  //[5, 6, 4, 9] - 24 ✔️
+  //[6, 4, 9, 1] - 20 ❌
+  // 💡: "sliding window" algorithm is best solution here, try to guess most ergonomic and mathematical solution or at least solve it
+}
+```
+
+<details><summary><b>Answer</b></summary>
+  
+version 1 (very casual)
+```javascript
+function maxSubarraySum(arr, size) {
+  if (size > arr.length) {
+    return null;
+  }
+
+  const subArraysCount = arr.length - size + 1;
+  //count number of arrays of {size} neighbouring numbers
+
+  const arrayOfArrays = [];
+  for (let i = 0; i < subArraysCount; i++) {
+    let tempArrayOfSize = [];
+    for (let ii = i; ii < size + i; ii++) {
+      tempArrayOfSize.push(arr[ii]);
+    }
+    arrayOfArrays.push(tempArrayOfSize);
+  }
+  //nested loop to generate array of arrays of {size} neighbouring numbers
+  //[[1, 3, 7, 5], [3, 7, 5, 6],....]
+
+  const ArrayOfSums = arrayOfArrays.map((e) => {
+    return e.reduce((acc, cur) => {
+      return acc + cur;
+    }, 0);
+  });
+  //array of summed sub arrays
+
+  return Math.max(...ArrayOfSums);
+}
+```
+version 2 ("Sliding Window" pattern)
+
+```javascript
+function maxSubarraySum(arr, size) {
+  if (size > arr.length) {
+    return null;
+  }
+
+  let maxSum = 0;
+  let tempSum = 0;
+
+  // initialize the window
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+
+  tempSum = maxSum;
+
+  // slide the window over the array
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+
+  return maxSum;
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
