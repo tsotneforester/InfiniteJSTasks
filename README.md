@@ -1459,6 +1459,44 @@ function maxSubarraySum(arr, size) {
 
 ---
 
+### 🟢 38 - Vowels & Consonants
+
+```javascript
+const string = "innovation";
+console.log(countVowelsAndConsonants(string)); //{vowels: 5, consonants: 5}
+
+function countVowelsAndConsonants(word) {
+  // Write a function which will count vowels and consonants in the given word
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function countVowelsAndConsonants(word) {
+  const vowelsArr = ["i", "e", "o", "u", "a"];
+
+  let arr = word.toLowerCase().split("");
+
+  let vowels = 0;
+  let consonants = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (vowelsArr.includes(arr[i])) {
+      vowels++;
+    } else {
+      consonants++;
+    }
+  }
+
+  return { vowels, consonants };
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
