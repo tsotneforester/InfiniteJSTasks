@@ -192,9 +192,9 @@ function caseToggler(string) {
 
 ```javascript
 const cars = ["bmw", "opel", "lada", "opel", "BMW"];
-console.log(dublicateRemover(cars)); // ['bmw', 'opel', 'lada']
+console.log(duplicateRemover(cars)); // ['bmw', 'opel', 'lada']
 
-function dublicateRemover(array) {
+function duplicateRemover(array) {
   //Write a function to remove duplicate items from array (case insensitivity) using/not using set
 }
 ```
@@ -202,7 +202,7 @@ function dublicateRemover(array) {
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function dublicateRemover(array) {
+function duplicateRemover(array) {
   let newarray = array.map((e) => {
     return e.toLowerCase();
   });
@@ -213,7 +213,7 @@ function dublicateRemover(array) {
   return dupChars;
 }
 
-function dublicateRemover(array) {
+function duplicateRemover(array) {
   const mySet = new Set();
   for (let elem of array) {
     mySet.add(elem.toLowerCase());
@@ -226,13 +226,13 @@ function dublicateRemover(array) {
 
 ---
 
-### 🟢 06 - Dublicate Finder
+### 🟢 06 - duplicate Finder
 
 ```javascript
 const nums = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7];
-console.log(dublicateFinder(nums)); //["4", "7"];
+console.log(duplicateFinder(nums)); //["4", "7"];
 
-function dublicateFinder(arr) {
+function duplicateFinder(arr) {
   //Write a function to get array of duplicate values in array.
 }
 ```
@@ -241,7 +241,7 @@ function dublicateFinder(arr) {
   
 version 1
 ```javascript
-function dublicateFinder(arr) {
+function cateFinder(arr) {
   let result = arr.filter((e, index) => {
     return arr.indexOf(e) !== index;
   });
@@ -250,7 +250,7 @@ function dublicateFinder(arr) {
 ```
 version 2
 ```javascript
-function dublicateFinder(arr) {
+function duplicateFinder(arr) {
   return arr.reduce((acc, cur, i) => {
     if (arr.lastIndexOf(cur) !== i && !acc.includes(cur)) {
       acc.push(cur);
