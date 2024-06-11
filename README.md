@@ -193,12 +193,15 @@ function caseToggler(string) {
 ```javascript
 const cars = ["Mini", "mini", "fiat", "fiat", "bmw", "mini", "OPEL", "Mini", "opel", "OPEL", "Mini", "bmw", "opel", "OPEL", "bmw", "opel", "bmw", "mini", "opel", "bmw", "fiat", "OPEL", "fiat", "bmw"];
 
-console.log(duplicateRemover(cars)); // ['Mini', 'mini', 'fiat', 'bmw', 'OPEL', 'opel']
+console.log(duplicateRemover(cars));
+// 1️⃣ ['Mini', 'mini', 'fiat', 'bmw', 'OPEL', 'opel']
+// 2️⃣ ["mini", "fiat", "bmw", "opel"]
 
 function dublicateRemover(arr) {
-  //Write a function to remove duplicate items from array (case-sensitive)
+  //Write a function to remove duplicate items from array (case-sensitive/case-insensitive)
   //⭐ - can you think of method-less solution?
 }
+
 ```
 
 <details><summary><b>Answer</b></summary>
