@@ -188,7 +188,7 @@ function caseToggler(string) {
 
 ---
 
-### 🟢 05 - iDuplicate
+### 🟢 05 - Duplicate Remove (string)
 
 ```javascript
 const cars = ["bmw", "opel", "lada", "opel", "BMW"];
