@@ -210,7 +210,14 @@ function dublicateRemover(arr) {
 function duplicateRemover(arr) {
   return arr.filter((e, i) => {
     return arr.indexOf(e) === i;
+    //return arr.indexOf(e.toLowerCase()) === i;
   });
+}
+```
+```javascript
+function duplicateRemover(arr) {
+  return [...new Set(arr)];
+  //return [...new Set(arr.map((e) => e.toLowerCase()))];
 }
 ```
 ⭐ method-less solution
@@ -219,7 +226,8 @@ function duplicateRemover(arr) {
   let obj = {};
 
   for (let i = 0; i < arr.length; i++) {
-    obj[arr[i]] = "";
+    obj[arr[i]] = null;
+    //obj[arr[i].toLowerCase()] = null;
   }
 
   let result = [];
