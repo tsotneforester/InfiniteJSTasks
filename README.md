@@ -191,34 +191,31 @@ function caseToggler(string) {
 ### 🟢 05 - Duplicate Remove (string)
 
 ```javascript
-const cars = ["bmw", "opel", "lada", "opel", "BMW"];
-console.log(duplicateRemover(cars)); // ['bmw', 'opel', 'lada']
+const cars = ["Mini", "mini", "fiat", "fiat", "bmw", "mini", "OPEL", "Mini", "opel", "OPEL", "Mini", "bmw", "opel", "OPEL", "bmw", "opel", "bmw", "mini", "opel", "bmw", "fiat", "OPEL", "fiat", "bmw"];
 
-function duplicateRemover(array) {
-  //Write a function to remove duplicate items from array (case insensitivity) using/not using set
+console.log(duplicateRemover(cars)); // ['Mini', 'mini', 'fiat', 'bmw', 'OPEL', 'opel']
+
+function dublicateRemover(arr) {
+  //Write a function to remove duplicate items from array (case-sensitive)
+  //⭐ - can you think of method-less solution?
 }
 ```
 
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function duplicateRemover(array) {
-  let newarray = array.map((e) => {
-    return e.toLowerCase();
+function duplicateRemover(arr) {
+  return arr.filter((e, i) => {
+    return arr.indexOf(e) === i;
   });
-  let dupChars = newarray.filter((c, index) => {
-    return newarray.indexOf(c) === index;
-  });
-
-  return dupChars;
 }
-
-function duplicateRemover(array) {
-  const mySet = new Set();
-  for (let elem of array) {
-    mySet.add(elem.toLowerCase());
-  }
-  return [...mySet];
+```
+⭐ method-less solution
+```javascript
+function duplicateRemover(arr) {
+  return arr.filter((e, i) => {
+    return arr.indexOf(e) === i;
+  });
 }
 ```
 
