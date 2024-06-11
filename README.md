@@ -213,9 +213,19 @@ function duplicateRemover(arr) {
 ⭐ method-less solution
 ```javascript
 function duplicateRemover(arr) {
-  return arr.filter((e, i) => {
-    return arr.indexOf(e) === i;
-  });
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    obj[arr[i]] = "";
+  }
+
+  let result = [];
+
+  for (let key in obj) {
+    result.push(key);
+  }
+
+  return result;
 }
 ```
 
