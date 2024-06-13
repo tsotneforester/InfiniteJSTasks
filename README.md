@@ -1515,6 +1515,36 @@ function countVowelsAndConsonants(word) {
 
 ---
 
+### 🟢 39 - Unique Keys
+
+```javascript
+const arrayOfObjects = [
+  { name: "Ann", age: 25, city: "Paris" },
+  { name: "Thomas", age: 30, country: "USA" },
+  { name: "Salomea", city: "Tbilisi", occupation: "Engineer" },
+];
+console.log(uniqueKeys(arrayOfObjects));
+// ['name', 'age', 'city', 'country', 'occupation']
+
+function uniqueKeys(arr) {
+  // Write a function to generate array of unique keys from given array of objects
+}
+
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function uniqueKeys(arr) {
+  const allKeys = arr.flatMap((e) => Object.keys(e));
+  return [...new Set(allKeys)];
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢
