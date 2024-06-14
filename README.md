@@ -1544,6 +1544,59 @@ function uniqueKeys(arr) {
 </details>
 
 ---
+### 🟢 40 - Pangram Check
+
+```javascript
+const string1 = "The quick brown fox jumps over the lazy dog";
+const string2 = "Waltz, bad nymph, for quick jigs vex.";
+const string3 = "The five boxing wizard jump quickly.";
+
+console.log(isPangram(string1)); // ✔️ true
+console.log(isPangram(string2)); // ✔️ true
+console.log(isPangram(string3)); // ❌ false (missing 's')
+
+function isPangram(sentence) {
+  // Write a function to checks if given string is pangram
+  //💡 A pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function isPangram(sentence) {
+  let arr = [
+    ...new Set(
+      sentence
+        .toLowerCase()
+        .replace(/[^a-z]/g, "") // removes non-letter characters
+        .split("")
+    ),
+  ];
+  return arr.length == 26;
+}
+```
+
+```javascript
+function isPangram(sentence) {
+  sentence = sentence.toLowerCase();
+
+  const alphabetSet = new Set();
+
+  for (const char of sentence) {
+    if (/[a-z]/.test(char)) {
+      alphabetSet.add(char);
+    }
+  }
+
+  return alphabetSet.size === 26;
+}
+```
+
+</details>
+
+---
+
 
 <!--
 
