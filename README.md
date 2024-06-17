@@ -1597,10 +1597,48 @@ function isPangram(sentence) {
 
 ---
 
+### 🟢 41 - Unique Letters
+
+```javascript
+console.log(countUniqueLetters("Mississippi")); // { m: 1, i: 4, s: 4, p: 2 }
+
+function countUniqueLetters(str) {
+  //Write a function that coutns unique letters in string
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function countUniqueLetters(str) {
+  str = str.toLowerCase();
+  const letterCounts = {};
+
+  // Iterate through each character in the word
+  for (const char of str) {
+    // Check if the character is a letter (a-z)
+    if (/[a-z]/.test(char)) {
+      // If the letter exists in the object, increment its count
+      if (letterCounts[char]) {
+        letterCounts[char]++;
+      } else {
+        // If the letter is new, initialize its count to 1
+        letterCounts[char] = 1;
+      }
+    }
+  }
+
+  return letterCounts;
+}
+```
+
+</details>
+
+---
 
 <!--
 
-### 🟢
+### 🟢🔴🟡
 
 ```javascript
 
