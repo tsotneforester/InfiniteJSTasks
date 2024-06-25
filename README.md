@@ -1636,6 +1636,51 @@ function countUniqueLetters(str) {
 
 ---
 
+### 🟢 42 - Unique Numbers
+
+```javascript
+const couples = [10, 5, 10, 7, 5, 12, 13];
+console.log(findUniqueNumbers(couples)); // [7, 12, 13]
+
+function findUniqueNumbers(arr) {
+  //Write a function that creates array on unique number in given array
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function findUniqueNumbers(arr) {
+  return arr.reduce((acc, cur) => {
+    if (arr.lastIndexOf(cur) == arr.indexOf(cur)) {
+      acc.push(cur);
+    }
+    return acc;
+  }, []);
+}
+```
+
+```javascript
+function findUniqueNumbers(arr) {
+  const numberCounts = {};
+
+  // Iterate through the array and count occurrences
+  for (const num of arr) {
+    if (numberCounts[num]) {
+      numberCounts[num]++;
+    } else {
+      numberCounts[num] = 1;
+    }
+  }
+
+  return arr.filter((num) => numberCounts[num] === 1);
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
