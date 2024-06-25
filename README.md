@@ -244,7 +244,7 @@ function duplicateRemover(arr) {
 
 ---
 
-### 🟢 06 - duplicate Finder
+### 🟢 06 - Duplicate Finder
 
 ```javascript
 const nums = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7];
