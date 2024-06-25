@@ -1597,7 +1597,7 @@ function isPangram(sentence) {
 
 ---
 
-### 🟢 41 - Unique Letters
+### 🟢 41 - Unique Letters Count
 
 ```javascript
 console.log(countUniqueLetters("Mississippi")); // { m: 1, i: 4, s: 4, p: 2 }
