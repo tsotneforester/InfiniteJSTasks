@@ -1680,6 +1680,28 @@ function findUniqueNumbers(arr) {
 </details>
 
 ---
+### 🟢 43 - Count Nested
+
+```javascript
+const numbers = [2, 8, [6, 3, 3], [4], 5, [3, 4, [5, 4]]];
+console.log(arrayCounter(numbers)); // 3
+
+function arrayCounter(arr) {
+  //Write a function to count number of first-level nested arrays
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function arrayCounter(arr) {
+  return arr.filter((n) => Array.isArray(n)).length;
+}
+```
+
+</details>
+
+---
 
 <!--
 
