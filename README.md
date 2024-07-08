@@ -1703,6 +1703,35 @@ function arrayCounter(arr) {
 
 ---
 
+### 🟢 44 - Remove Element
+
+```javascript
+const myArray = [1, 3, 2, 2, 3, 2];
+console.log(removeElement(myArray, 2)); //3
+
+function removeElement(arr, val) {
+  // Write a function to remove given element (val) from array and then return array length
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function removeElement(arr, val) {
+  let k = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== val) {
+      k++;
+    }
+  }
+  return k;
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
