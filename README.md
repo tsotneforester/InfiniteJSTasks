@@ -1732,6 +1732,98 @@ function removeElement(arr, val) {
 
 ---
 
+### 🟡 45 - Text Encryptor
+
+```javascript
+console.log(encryptor("efg", 1, 4)); //abc
+console.log(encryptor("XYz", 2, 2)); //Zab
+
+function encryptor(text, orint, k) {
+  //Your task is to develop encryption tool to encrypt a given text. Each character should be shifted by k positions to the left or right, indicated by orient. The encryption should wrap around the alphabet, meaning that 'y' becomes 'b' if shifted three positions to the right.
+  //🔰 text will consist of letters (both uppercase and lowercase) and spaces only.
+  //🔰 orient can have a value of 1, indicating a left shift, or 2, indicating a right shift.
+  //🔰 k can be any integer number.
+  //🔰Characters should maintain the same case when encrypted, and spaces should not be encrypted.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function encryptor(text, orint, k) {
+  //----------- argument validations
+  const regex = /^[a-zA-Z\s]+$/;
+
+  for (const letter of text) {
+    if (!regex.test(letter)) {
+      alert("check text, only letters and spaces are allowed");
+      return;
+    }
+  }
+
+  if (!Number.isInteger(k) || k <= 0) {
+    alert("only positive integers are allowed");
+    return;
+  }
+
+  if (orint !== 1 && orint !== 2) {
+    alert("1 indicates to left shift, 2 indicates to right shift");
+    return;
+  }
+  //-------------- correctOverflow()
+  function correctOverflow(num) {
+    const lowerBound = "a".charCodeAt(); //97
+    const upperBound = "z".charCodeAt(); //122
+
+    if (num < lowerBound) {
+      return upperBound + 1 - (lowerBound - num);
+    } else if (num > upperBound) {
+      return lowerBound - 1 + (num - upperBound);
+    }
+
+    return num;
+  }
+  //-----------------------------
+  const newK = k % 26;
+  let isLeft = orint == 2 ? false : true;
+
+  let ArrayOfLetterInfo = [...text].map((letter) => {
+    let obj = {};
+    obj.letter = letter;
+    obj.charCode = letter.toLowerCase().charCodeAt();
+    obj.isUpperCase = letter == letter.toUpperCase() && true;
+
+    if (isLeft) {
+      obj.encriptionCode = correctOverflow(obj.charCode - newK);
+    } else {
+      obj.encriptionCode = correctOverflow(obj.charCode + newK);
+    }
+
+    if (obj.charCode == 32) {
+      obj.encriptionCode = 32;
+    }
+
+    return obj;
+  });
+
+  //console.log(ArrayOfLetterInfo);
+
+  let encryptedText = ArrayOfLetterInfo.map((obj) => {
+    if (obj.isUpperCase) {
+      return String.fromCharCode(obj.encriptionCode).toUpperCase();
+    }
+
+    return String.fromCharCode(obj.encriptionCode);
+  });
+
+  return encryptedText.join("");
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
