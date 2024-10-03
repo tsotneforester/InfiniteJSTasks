@@ -1234,39 +1234,6 @@ function isEqual(arr1, arr2) {
 ```
 
 <details><summary><b>Answer</b></summary>
-more ad hoc or improvised approach
-  
-```javascript
-function isEqual(arr1, arr2) {
-  //avoid loop execution when empty and not equly-sized arrays
-  if (arr1.length != arr2.length) return false;
-  if (!arr1.length) return true;
-
-let status = true;
-
-let temp1 = [...arr1];
-let temp2 = [...arr2];
-
-const LENGTH = temp1.length;
-
-temp1.sort(function (a, b) {
-return b - a;
-});
-
-temp2.sort(function (a, b) {
-return b - a;
-});
-
-for (let i = 0; i < LENGTH; i++) {
-if (temp1[i] == temp2[i]) continue;
-status = false;
-}
-
-return status;
-}
-
-````
-pattern approach
 
 ```javascript
 function isEqual(arr1, arr2) {
