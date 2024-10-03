@@ -28,7 +28,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   46    |
+| Frequency Counter |   46, 29    |
 
 ---
 
@@ -1090,7 +1090,7 @@ function bulkOverlaping(arr) {
 An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 ```javascript
-const word1 = "listen";
+const word1 = "Listen";
 const word2 = "silent";
 console.log(areAnagrams(word1, word2)); // true
 
@@ -1107,6 +1107,36 @@ function areAnagrams(word1, word2) {
   const sortedWord2 = [...word2.toLowerCase()].sort().join("");
 
   return sortedWord1 === sortedWord2;
+}
+```
+more sophistaced solution
+```javascript
+function areAnagrams(word1, word2) {
+  if (word1.length != word2.length) {
+    return false;
+  }
+
+  let counter1 = {};
+  let counter2 = {};
+
+  for (const letter of word1.toLowerCase()) {
+    counter1[letter] = (counter1[letter] || 0) + 1;
+  }
+
+  for (const letter of word2.toLowerCase()) {
+    counter2[letter] = (counter2[letter] || 0) + 1;
+  }
+
+  //console.log(counter1);
+  //console.log(counter2);
+
+  for (const letter in counter1) {
+    if (counter1[letter] != counter2[letter]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 ```
 
