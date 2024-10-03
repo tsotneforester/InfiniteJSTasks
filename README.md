@@ -1862,8 +1862,8 @@ function same(arr1, arr2) {
     counter2[num] = (counter2[num] || 0) + 1;
   }
 
-  console.log(counter1);
-  console.log(counter2);
+  //console.log(counter1);
+  //console.log(counter2);
 
   for (let key in counter1) {
     if (!(key ** 2 in counter2)) {
