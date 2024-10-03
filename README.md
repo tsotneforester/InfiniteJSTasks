@@ -26,6 +26,10 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 </h5>
 
+| Algorithm         | surname |
+| :---------------- | :-----: |
+| Frequency Counter |   45    |
+
 ---
 
 ### 🟢 01 - Hello Universe!
@@ -201,7 +205,6 @@ function dublicateRemover(arr) {
   //Write a function to remove duplicate items from array (case-sensitive/case-insensitive)
   //⭐ - can you think of method-less solution?
 }
-
 ```
 
 <details><summary><b>Answer</b></summary>
@@ -214,13 +217,16 @@ function duplicateRemover(arr) {
   });
 }
 ```
+
 ```javascript
 function duplicateRemover(arr) {
   return [...new Set(arr)];
   //return [...new Set(arr.map((e) => e.toLowerCase()))];
 }
 ```
+
 ⭐ method-less solution
+
 ```javascript
 function duplicateRemover(arr) {
   let obj = {};
@@ -1102,7 +1108,6 @@ function areAnagrams(word1, word2) {
 
   return sortedWord1 === sortedWord2;
 }
-
 ```
 
 </details>
@@ -1124,7 +1129,6 @@ function hasZeroSumPair(arr) {
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-
 function hasZeroSumPair(arr) {
   for (let num of arr) {
     if (num === 0 && num === -0) continue;
@@ -1170,6 +1174,7 @@ function objectify(arr1, arr2) {
 ```
 
 2. More advanced technics
+
 ```javascript
 function objectify(arr1, arr2) {
   return Object.fromEntries(
@@ -1207,31 +1212,32 @@ function isEqual(arr1, arr2) {
   if (arr1.length != arr2.length) return false;
   if (!arr1.length) return true;
 
-  let status = true;
+let status = true;
 
-  let temp1 = [...arr1];
-  let temp2 = [...arr2];
+let temp1 = [...arr1];
+let temp2 = [...arr2];
 
-  const LENGTH = temp1.length;
+const LENGTH = temp1.length;
 
-  temp1.sort(function (a, b) {
-    return b - a;
-  });
+temp1.sort(function (a, b) {
+return b - a;
+});
 
-  temp2.sort(function (a, b) {
-    return b - a;
-  });
+temp2.sort(function (a, b) {
+return b - a;
+});
 
-  for (let i = 0; i < LENGTH; i++) {
-    if (temp1[i] == temp2[i]) continue;
-    status = false;
-  }
-
-  return status;
+for (let i = 0; i < LENGTH; i++) {
+if (temp1[i] == temp2[i]) continue;
+status = false;
 }
-```
+
+return status;
+}
+
+````
 pattern approach
-  
+
 ```javascript
 function isEqual(arr1, arr2) {
   //avoid execution when not equly-sized arrays
@@ -1252,7 +1258,7 @@ function isEqual(arr1, arr2) {
   }
   return true;
 }
-```
+````
 
 </details>
 
@@ -1307,8 +1313,6 @@ function spamDetector(words, objects) {
 
 ---
 
-
-
 ### 🟢 34 - Reverse Array
 
 ```javascript
@@ -1334,12 +1338,15 @@ function reverseArray(arr) {
   return newArr;
 }
 ```
+
 super short version
+
 ```javascript
 function reverseArray(arr) {
   return arr.map((_, i, arr) => arr[arr.length - i - 1]);
 }
 ```
+
 </details>
 
 ---
@@ -1421,30 +1428,31 @@ function maxSubarraySum(arr, size) {
     return null;
   }
 
-  const subArraysCount = arr.length - size + 1;
-  //count number of arrays of {size} neighbouring numbers
+const subArraysCount = arr.length - size + 1;
+//count number of arrays of {size} neighbouring numbers
 
-  const arrayOfArrays = [];
-  for (let i = 0; i < subArraysCount; i++) {
-    let tempArrayOfSize = [];
-    for (let ii = i; ii < size + i; ii++) {
-      tempArrayOfSize.push(arr[ii]);
-    }
-    arrayOfArrays.push(tempArrayOfSize);
-  }
-  //nested loop to generate array of arrays of {size} neighbouring numbers
-  //[[1, 3, 7, 5], [3, 7, 5, 6],....]
-
-  const ArrayOfSums = arrayOfArrays.map((e) => {
-    return e.reduce((acc, cur) => {
-      return acc + cur;
-    }, 0);
-  });
-  //array of summed sub arrays
-
-  return Math.max(...ArrayOfSums);
+const arrayOfArrays = [];
+for (let i = 0; i < subArraysCount; i++) {
+let tempArrayOfSize = [];
+for (let ii = i; ii < size + i; ii++) {
+tempArrayOfSize.push(arr[ii]);
 }
-```
+arrayOfArrays.push(tempArrayOfSize);
+}
+//nested loop to generate array of arrays of {size} neighbouring numbers
+//[[1, 3, 7, 5], [3, 7, 5, 6],....]
+
+const ArrayOfSums = arrayOfArrays.map((e) => {
+return e.reduce((acc, cur) => {
+return acc + cur;
+}, 0);
+});
+//array of summed sub arrays
+
+return Math.max(...ArrayOfSums);
+}
+
+````
 version 2 ("Sliding Window" pattern)
 
 ```javascript
@@ -1471,7 +1479,7 @@ function maxSubarraySum(arr, size) {
 
   return maxSum;
 }
-```
+````
 
 </details>
 
@@ -1529,7 +1537,6 @@ console.log(uniqueKeys(arrayOfObjects));
 function uniqueKeys(arr) {
   // Write a function to generate array of unique keys from given array of objects
 }
-
 ```
 
 <details><summary><b>Answer</b></summary>
@@ -1544,6 +1551,7 @@ function uniqueKeys(arr) {
 </details>
 
 ---
+
 ### 🟢 40 - Pangram Check
 
 ```javascript
@@ -1680,6 +1688,7 @@ function findUniqueNumbers(arr) {
 </details>
 
 ---
+
 ### 🟢 43 - Count Nested
 
 ```javascript
