@@ -26,9 +26,9 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 </h5>
 
-| Algorithm         | surname |
+| Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   45    |
+| Frequency Counter |   46    |
 
 ---
 
@@ -1826,6 +1826,56 @@ function encryptor(text, orint, k) {
   });
 
   return encryptedText.join("");
+}
+```
+
+</details>
+
+---
+
+### 🟢 46 - Same Squares
+
+```javascript
+console.log(same([1, 2, 4], [16, 1, 4])); // true
+console.log(same([1, 2, 3, 4], [9, 5, 16, 1])); // false
+
+function same() {
+  //Write a function such that it accepts two (2) arrays. The intended function should return true if every value in array one has its corresponding value squared in array two.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function same(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+
+  let counter1 = {};
+  let counter2 = {};
+
+  for (let i = 0; i < arr1.length; i++) {
+    let num = arr1[i];
+    counter1[num] = (counter1[num] || 0) + 1;
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    let num = arr2[i];
+    counter2[num] = (counter2[num] || 0) + 1;
+  }
+
+  console.log(counter1);
+  console.log(counter2);
+
+  for (let key in counter1) {
+    if (!(key ** 2 in counter2)) {
+      return false;
+    }
+
+    if (counter2[key ** 2] !== counter1[key]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 ```
 
