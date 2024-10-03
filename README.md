@@ -28,7 +28,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   46, 29    |
+| Frequency Counter |   46, 29, 32   |
 
 ---
 
