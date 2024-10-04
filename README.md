@@ -1880,6 +1880,71 @@ function same(arr1, arr2) {
 
 ---
 
+### 🟢 47 - Students List
+
+```javascript
+const courses = [
+  {
+    course: "Mathematics",
+    students: [
+      { firstName: "John", lastName: "Doe" },
+      { firstName: "Jane", lastName: "Smith" },
+      { firstName: "Michael", lastName: "Johnson" },
+      { firstName: "Emily", lastName: "Davis" },
+      { firstName: "William", lastName: "Brown" },
+      { firstName: "Sophia", lastName: "Taylor" },
+      { firstName: "James", lastName: "Anderson" },
+    ],
+  },
+  {
+    course: "History",
+    students: [
+      { firstName: "Alexander", lastName: "Miller" },
+      { firstName: "Olivia", lastName: "Wilson" },
+      { firstName: "Isabella", lastName: "Moore" },
+      { firstName: "Ethan", lastName: "Martin" },
+      { firstName: "Charlotte", lastName: "Lee" },
+      { firstName: "Lucas", lastName: "Clark" },
+    ],
+  },
+  {
+    course: "Physics",
+    students: [
+      { firstName: "Liam", lastName: "Hall" },
+      { firstName: "Ava", lastName: "Lewis" },
+      { firstName: "Noah", lastName: "Walker" },
+      { firstName: "Mia", lastName: "Allen" },
+      { firstName: "Mason", lastName: "Young" },
+      { firstName: "Ella", lastName: "King" },
+      { firstName: "Logan", lastName: "Scott" },
+    ],
+  },
+];
+
+console.log(getStudents(courses));
+
+// ["John Doe", "Jane Smith", "Michael Johnson", "Emily Davis", "William Brown", "Sophia Taylor", "James Anderson", "Alexander Miller", "Olivia Wilson", "Isabella Moore", "Ethan Martin", "Charlotte Lee", "Lucas Clark", "Liam Hall", "Ava Lewis", "Noah Walker", "Mia Allen", "Mason Young", "Ella King", "Logan Scott"];
+
+function getStudents(arr) {
+  //Write a function that creates array of students with full name
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function getStudents(arr) {
+  return arr
+    .map((mentor) => mentor.students) // Get all students arrays
+    .flat() // Flatten into a single array
+    .map((student) => `${student.firstName} ${student.lastName}`);
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
