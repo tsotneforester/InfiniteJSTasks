@@ -1945,6 +1945,38 @@ function getStudents(arr) {
 
 ---
 
+### 🟢 48 - Spinal Case
+
+```javascript
+console.log(spinalCase("Title Case Example")); //title-case-example
+console.log(spinalCase("dot.case.example")); //dot-case-example
+console.log(spinalCase("SCREAMING_SNAKE_CASE_EXAMPLE")); //screaming-snake-case-example
+console.log(spinalCase("snake_case_example")); //snake-case-example
+console.log(spinalCase("PascalCaseExample")); //pascal-case-example
+
+function spinalCase(str) {
+  //Write a function that transforms various-case string to spinal-case
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function spinalCase(str) {
+  return (
+    str
+      // Replace spaces and underscores with a hyphen
+      .replace(/\s|_|\./g, "-")
+      .replace(/([a-z])([A-Z])/g, "$1-$2")
+      .toLowerCase()
+  );
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
