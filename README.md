@@ -1379,17 +1379,22 @@ function stringReverse(str) {
 ```javascript
 function isPalindrome(word) {
   // Write a function which will check if given word is a palindrome
+  //💡 A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+  //🔰 You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes
 }
 
-console.log(isPalindrome("rotator")); // true
-console.log(isPalindrome("hello")); // false
+
+console.log(isPalindrome("e_ yE")); //true
+console.log(isPalindrome("A man, a plan, a canal. Panama")); //true
+console.log(isPalindrome("never odd or even")); //true
 ```
 
 <details><summary><b>Answer</b></summary>
 
 ```javascript
 function isPalindrome(word) {
-  return word === word.split("").reverse().join("");
+  let filtered = word.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  return filtered === filtered.split("").reverse().join("");
 }
 ```
 
