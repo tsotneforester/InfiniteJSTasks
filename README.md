@@ -59,13 +59,13 @@ function sayHello() {
 Do you remember Nintendo’s Super Mario Brothers? Mario must ascend a bunch of right-aligned, left-aligned pyramid of blocks. You must write function, that will receive number from 1 to 9 and build that height pyramids in console, use "#" as building block.
 
 ```javascript
-buildRightAligned(5);
+buildLeftAligned(5);
 // #
 // ##
 // ###
 // ####
 // #####
-buildLeftAligned(5);
+buildRightAligned(5);
 //     #
 //    ##
 //   ###
@@ -82,44 +82,25 @@ buildPyramid(5);
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function buildRightAligned(n) {
-  let node = "";
-  for (let i = 0; i < n; i++) {
-    node += "#";
-    console.log(node);
+function buildRightAligned(height) {
+    for (let i = 1; i <= height; i++) {
+        console.log(' '.repeat(height - i) + '#'.repeat(i));
+    }
+}
+
+function buildLeftAligned(height) {
+  for (let i = 1; i <= height; i++) {
+    console.log("#".repeat(i));
   }
 }
 
-function buildLeftAligned(n) {
-  for (let i = 1; i <= n; i++) {
-    let node = "";
-    for (let ii = 1; ii <= n - i; ii++) {
-      node += " ";
-    }
 
-    for (let ii = 1; ii <= i; ii++) {
-      node += "#";
+function buildPyramid(height) {
+    for (let i = 1; i <= height; i++) {
+        let spaces = ' '.repeat(height - i);
+        let blocks = '#'.repeat(i);
+        console.log(spaces + blocks + ' ' + blocks);
     }
-    console.log(node);
-  }
-}
-
-function buildPyramid(n) {
-  for (let i = 1; i <= n; i++) {
-    let node = "";
-    for (let ii = 1; ii <= n - i; ii++) {
-      node += " ";
-    }
-
-    for (let ii = 1; ii <= i; ii++) {
-      node += "#";
-    }
-
-    for (let ii = 1; ii <= i; ii++) {
-      node += "#";
-    }
-    console.log(node);
-  }
 }
 ```
 
