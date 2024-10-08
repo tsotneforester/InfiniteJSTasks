@@ -28,7 +28,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   46, 29, 32   |
+| Frequency Counter |   46, 29, 32, 3   |
 
 ---
 
@@ -109,8 +109,8 @@ function buildPyramid(height) {
 ### 🟢 03 - Mode
 
 ```javascript
-const arr = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
-console.log(getMode(arr)); //a - 5 times
+const results = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+console.log(getMode(results)); //a - 5 times
 
 function getMode(array) {
   //Write a function to find the most frequent item of an array.
@@ -120,25 +120,24 @@ function getMode(array) {
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function getMode(array) {
-  let set1 = new Set(array);
-  let uniqArr = [...set1]; // [3, 'a', 2, 4, 9]
+function getMode(arr) {
+  let frequencyObject = {};
 
-  let countArr = [];
-  for (let i = 0; i < uniqArr.length; i++) {
-    let counter = 0;
-    for (let e = 0; e < arr.length; e++) {
-      if (uniqArr[i] == arr[e]) {
-        counter++;
-      }
-    }
-    countArr.push(counter); // [4, 5, 2, 1, 1]
+  for (const element of arr) {
+    frequencyObject[element] = (frequencyObject[element] || 0) + 1;
   }
 
-  let maxNum = Math.max(...countArr); //5
-  let placeNum = countArr.findIndex((e) => e == maxNum); //1
+  let maxFrequency = 0;
+  let character = "";
 
-  return `${uniqArr[placeNum]} - ${maxNum} times`;
+  for (const key in frequencyObject) {
+    if (frequencyObject[key] > maxFrequency) {
+      maxFrequency = frequencyObject[key];
+      character = key;
+    }
+  }
+
+  return `${character} - ${maxFrequency} times`;
 }
 ```
 
