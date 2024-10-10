@@ -1968,6 +1968,109 @@ function spinalCase(str) {
 </details>
 
 ---
+### 🟡 49 - Animal Groups
+
+```javascript
+const animals = [
+  { name: "Lion", species: "Big Cat" },
+  { name: "Tiger", species: "Big Cat" },
+  { name: "Elephant", species: "Mammal" },
+  { name: "Eagle", species: "Bird" },
+  { name: "Shark", species: "Fish" },
+  { name: "Falcon", species: "Bird" },
+  { name: "Dolphin", species: "Mammal" },
+  { name: "Jackal", species: "" },
+  { name: "Salmon", species: "" },
+];
+
+console.log(groupAnimalsBySpecies(animals));
+
+// {
+//     "Big Cat": [
+//         {
+//             "name": "Lion",
+//             "species": "Big Cat"
+//         },
+//         {
+//             "name": "Tiger",
+//             "species": "Big Cat"
+//         }
+//     ],
+//     "Mammal": [
+//         {
+//             "name": "Elephant",
+//             "species": "Mammal"
+//         },
+//         {
+//             "name": "Dolphin",
+//             "species": "Mammal"
+//         }
+//     ],
+//     "Bird": [
+//         {
+//             "name": "Eagle",
+//             "species": "Bird"
+//         },
+//         {
+//             "name": "Falcon",
+//             "species": "Bird"
+//         }
+//     ],
+//     "Fish": [
+//         {
+//             "name": "Shark",
+//             "species": "Fish"
+//         }
+//     ],
+//     "Unknown": [
+//         {
+//             "name": "Jackal",
+//             "species": ""
+//         },
+//         {
+//             "name": "Salmon",
+//             "species": ""
+//         }
+//     ]
+// }
+
+function groupAnimalsBySpecies(arr) {
+  //You are given an array of animal objects, where each object contains properties such as name (the name of the animal) and species (the species of the animal). Your task is to group these animals by their species using
+  //1️⃣ Object.groupBy() method.
+  //2️⃣ reduce() method.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function groupAnimalsBySpecies(arr) {
+  return Object.groupBy(arr, (animal) => {
+    if (animal.species) {
+      return animal.species;
+    }
+    return "Unknown";
+  });
+}
+```
+```javascript
+function groupAnimalsBySpecies(arr) {
+  return arr.reduce((acc, animal) => {
+    const species = animal.species || "Unknown";
+
+    if (acc[species]) {
+      acc[species].push(animal);
+    } else {
+      acc[species] = [animal];
+    }
+    return acc;
+  }, {});
+}
+```
+
+</details>
+
+---
 
 <!--
 
