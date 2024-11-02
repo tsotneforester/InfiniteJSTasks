@@ -2113,7 +2113,55 @@ function isValidSudoku(board) {
 add-hoc version
   
 ```javascript
+function isValidSudoku(board) {
+  // 🔰 general function to check horizontal-flow of sudoku puzzle
+  function Check(board) {
+    for (const arr of board) {
+      for (const element of arr) {
+        if (!isNaN(element * 1) && arr.indexOf(element) != arr.lastIndexOf(element)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+  // 🔰 genarate horizontal-flow from grids
+  function gridProjection(board) {
+    let newBoard = [];
 
+    for (let x = 0; x < 3; x++) {
+      let xChunk = x;
+      for (let y = 0; y < 3; y++) {
+        let yChunk = y;
+
+        let newArr = [];
+        for (let i = xChunk * 3; i < 3 * (xChunk + 1); i++) {
+          for (let ii = yChunk * 3; ii < 3 * (yChunk + 1); ii++) {
+            newArr.push(board[i][ii]);
+          }
+        }
+        newBoard.push(newArr);
+      }
+    }
+
+    return newBoard;
+  }
+  // 🔰 genarate horizontal-flow from vertical columns
+  function verticalProjection(board) {
+    let newBoard = [];
+
+    for (let i = 0; i < 9; i++) {
+      let newArr = [];
+      for (let ii = 0; ii < 9; ii++) {
+        newArr.push(board[ii][i]);
+      }
+      newBoard.push(newArr);
+    }
+    return newBoard;
+  }
+
+  return Check(board) && Check(verticalProjection(board)) && Check(gridProjection(board));
+}
 ```
 
 </details>
