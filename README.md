@@ -2163,6 +2163,37 @@ function isValidSudoku(board) {
   return Check(board) && Check(verticalProjection(board)) && Check(gridProjection(board));
 }
 ```
+AI sollution
+```javascript
+function isValidSudoku(board) {
+  const seen = new Set();
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      const num = board[i][j];
+      if (num !== '.') {
+        // Create a unique identifier for the current number
+        const rowKey = `row${i}-${num}`;
+        const colKey = `col${j}-${num}`;
+        const boxKey = `box${Math.floor(i / 3)}-${Math.floor(j / 3)}-${num}`;
+
+        // Check if the number has already been seen
+        if (seen.has(rowKey) || seen.has(colKey) || seen.has(boxKey)) {
+          return false; // Duplicate found
+        }
+
+        // Add the current number to the set
+        seen.add(rowKey);
+        seen.add(colKey);
+        seen.add(boxKey);
+      }
+    }
+  }
+
+  return true; // No duplicates found, board is valid
+}
+
+```
 
 </details>
 
