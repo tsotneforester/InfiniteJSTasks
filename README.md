@@ -2199,6 +2199,107 @@ function isValidSudoku(board) {
 
 ---
 
+### 🟡 51 - Knight vs Bishop
+
+```javascript
+console.log(knightVsBishop(['c', 4], ['d', 6])); //Knight
+console.log(knightVsBishop(['g', 2], ['c', 6])); //Bishop
+console.log(knightVsBishop(['f', 2], ['b', 7])); //None
+
+function knightVsBishop(knightPosition, bishopPosition) {
+  //You will be provided with two arrays. Each of them contains a string and an integer which represent the positions of the pieces on the chess board: Knight and Bishop.
+  //Write a function which returns:
+  //🔰 "Knight" if the knight can capture the bishop
+  //🔰 "Bishop" if the bishop can capture the knight
+  //🔰 "None" if both pieces are safe
+}
+```
+
+<details><summary><b>Answer</b></summary>
+ad-hoc version
+  
+```javascript
+function knightVsBishop(knightPosition, bishopPosition) {
+  //generate array of arrays of possible moves of PIECE on COORDINATE
+  function possibleMoves(coordinate, piece) {
+    let result = [];
+    let letters = 'abcdefgh';
+    let digits = '12345678';
+
+    for (let i = 0; i < 8; i++) {
+      for (let ii = 0; ii < 8; ii++) {
+        let temp = [];
+        temp[0] = letters[i];
+        temp[1] = digits[ii] * 1;
+
+        if (piece == 'knight') {
+          if ((coordinate[0] == letters[i + 1] || coordinate[0] == letters[i - 1]) && (coordinate[1] == digits[ii + 2] || coordinate[1] == digits[ii - 2])) {
+            result.push(temp);
+          }
+          if ((coordinate[0] == letters[i + 2] || coordinate[0] == letters[i - 2]) && (coordinate[1] == digits[ii + 1] || coordinate[1] == digits[ii - 1])) {
+            result.push(temp);
+          }
+        }
+
+        if (piece == 'bishop') {
+          for (let x = 1; x < 8; x++) {
+            if (coordinate[0] == letters[i + x] && coordinate[1] == digits[ii + x]) {
+              result.push(temp);
+            }
+            if (coordinate[0] == letters[i + x] && coordinate[1] == digits[ii - x]) {
+              result.push(temp);
+            }
+            if (coordinate[0] == letters[i - x] && coordinate[1] == digits[ii + x]) {
+              result.push(temp);
+            }
+            if (coordinate[0] == letters[i - x] && coordinate[1] == digits[ii - x]) {
+              result.push(temp);
+            }
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  function isArrayInArray(arrayOfArrays, singleArray) {
+    return arrayOfArrays.some(arr => JSON.stringify(arr) === JSON.stringify(singleArray));
+  }
+
+  const knightMoves = possibleMoves(knightPosition, 'knight');
+  if (isArrayInArray(knightMoves, bishopPosition)) return 'Knight';
+
+  const bishopMoves = possibleMoves(bishopPosition, 'bishop');
+  if (isArrayInArray(bishopMoves, knightPosition)) return 'Bishop';
+
+  return 'None';
+}
+```
+
+```javascript
+function knightVsBishop(np, bp) {
+  np[1] = np[1].charCodeAt(0);
+  bp[1] = bp[1].charCodeAt(0);
+
+  let diffx = Math.abs(np[1] - bp[1]);
+  let diffy = Math.abs(np[0] - bp[0]);
+
+  if (diffx == diffy) {
+    return 'Bishop';
+  }
+
+  if ((diffx == 2 && diffy == 1) || (diffx == 1 && diffy == 2)) {
+    return 'Knight';
+  }
+
+  return 'None';
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
