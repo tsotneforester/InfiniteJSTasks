@@ -2163,7 +2163,8 @@ function isValidSudoku(board) {
   return Check(board) && Check(verticalProjection(board)) && Check(gridProjection(board));
 }
 ```
-AI sollution
+AI solution
+
 ```javascript
 function isValidSudoku(board) {
   const seen = new Set();
@@ -2275,7 +2276,7 @@ function knightVsBishop(knightPosition, bishopPosition) {
   return 'None';
 }
 ```
-AI verison
+AI version
 
 ```javascript
 function knightVsBishop(np, bp) {
