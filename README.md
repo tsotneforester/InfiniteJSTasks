@@ -2275,11 +2275,12 @@ function knightVsBishop(knightPosition, bishopPosition) {
   return 'None';
 }
 ```
+AI verison
 
 ```javascript
 function knightVsBishop(np, bp) {
-  np[1] = np[1].charCodeAt(0);
-  bp[1] = bp[1].charCodeAt(0);
+  np[0] = np[0].charCodeAt(0);
+  bp[0] = bp[0].charCodeAt(0);
 
   let diffx = Math.abs(np[1] - bp[1]);
   let diffy = Math.abs(np[0] - bp[0]);
