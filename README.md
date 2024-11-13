@@ -2302,6 +2302,65 @@ function knightVsBishop(np, bp) {
 
 ---
 
+### 🟢 52 - Update Object Value
+
+```javascript
+let shoppingList = [
+  { name: 'apples', quantity: 5 },
+  { name: 'bananas', quantity: 2 },
+  { name: 'carrots', quantity: 7 },
+  { name: 'detergent', quantity: 1 },
+];
+
+console.log(updateQuantity(shoppingList, 'bananas', 99));
+
+// [
+//   { name: 'apples', quantity: 5 },
+//   { name: 'bananas', quantity: 99 },
+//   { name: 'carrots', quantity: 7 },
+//   { name: 'detergent', quantity: 1 },
+// ];
+
+function updateQuantity(arr, itemName, newQuantity) {
+  //Find the given item in the array of objects and update its quantity to given quantity. Return the updated shopping list as a new array without mutating the original array.
+  //🔰 try to use .with method
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function updateQuantity(list, itemName, newQuantity) {
+  return list.map(e => {
+    if (e.name === itemName) {
+      e.quantity = newQuantity;
+    }
+    return e;
+  });
+}
+```
+.with method
+
+```javascript
+function updateQuantity(list, itemName, newQuantity) {
+  // Find the index of the item with the given name
+  const index = list.findIndex(item => item.name === itemName);
+
+  // If the item is not found, return the original list
+  if (index === -1) return list;
+
+  // Create a new object with the updated quantity
+  const updatedItem = { ...list[index], quantity: newQuantity };
+
+  // Use the `with()` method to create a new array with the updated item
+  return list.with(index, updatedItem);
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
