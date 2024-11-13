@@ -28,7 +28,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   46, 29, 32, 3   |
+| Frequency Counter |   46, 29, 32, 3 , 53 |
 
 ---
 
@@ -2354,6 +2354,53 @@ function updateQuantity(arr, itemName, newQuantity) {
 
   // Use the `with()` method to create a new array with the updated item
   return arr.with(index, updatedItem);
+}
+```
+
+</details>
+
+---
+
+### 🟢 - Find Single
+
+```javascript
+const couples = [10, 5, 10, 5, 12];
+console.log(findSingle(couples)); //12
+
+function findSingle(arr) {
+  //All but one of the entries in this array are represented twice. Write the function to detect single entry
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function findSingle(arr) {
+  return arr.reduce((acc, cur) => {
+    if (arr.lastIndexOf(cur) == arr.indexOf(cur)) {
+      acc += cur;
+    }
+    return acc;
+  }, 0);
+}
+```
+with algorithm
+
+```javascript
+function findSingle(arr) {
+  let numCount = {};
+
+  // Count occurrences of each number
+  for (let num of arr) {
+    numCount[num] = (numCount[num] || 0) + 1;
+  }
+
+  // Find the number with a count of 1
+  for (let num in numCount) {
+    if (numCount[num] === 1) {
+      return parseInt(num); // Return the single number
+    }
+  }
 }
 ```
 
