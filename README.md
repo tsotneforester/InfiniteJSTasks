@@ -2330,8 +2330,8 @@ function updateQuantity(arr, itemName, newQuantity) {
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function updateQuantity(list, itemName, newQuantity) {
-  return list.map(e => {
+function updateQuantity(arr, itemName, newQuantity) {
+  return arr.map(e => {
     if (e.name === itemName) {
       e.quantity = newQuantity;
     }
@@ -2342,18 +2342,18 @@ function updateQuantity(list, itemName, newQuantity) {
 .with method
 
 ```javascript
-function updateQuantity(list, itemName, newQuantity) {
+function updateQuantity(arr, itemName, newQuantity) {
   // Find the index of the item with the given name
-  const index = list.findIndex(item => item.name === itemName);
+  const index = arr.findIndex(item => item.name === itemName);
 
   // If the item is not found, return the original list
-  if (index === -1) return list;
+  if (index === -1) return arr;
 
   // Create a new object with the updated quantity
-  const updatedItem = { ...list[index], quantity: newQuantity };
+  const updatedItem = { ...arr[index], quantity: newQuantity };
 
   // Use the `with()` method to create a new array with the updated item
-  return list.with(index, updatedItem);
+  return arr.with(index, updatedItem);
 }
 ```
 
