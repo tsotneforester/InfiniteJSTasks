@@ -114,11 +114,19 @@ function buildLeftAligned(height) {
 
 
 function buildPyramid(height) {
-    for (let i = 1; i <= height; i++) {
-        let spaces = ' '.repeat(height - i);
-        let blocks = '#'.repeat(i);
-        console.log(spaces + blocks + ' ' + blocks);
-    }
+  let result = '';
+  for (let i = 0; i < height; i++) {
+    result += '#';
+    console.log(result.padStart(height, ' ') + result);
+  }
+}
+
+function buildPyramid(height) {
+  for (let i = 1; i <= height; i++) {
+    let spaces = ' '.repeat(height - i);
+    let blocks = '#'.repeat(i);
+    console.log(spaces + blocks + blocks);
+  }
 }
 ```
 
