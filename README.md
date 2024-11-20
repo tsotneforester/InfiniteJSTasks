@@ -238,6 +238,20 @@ function duplicateRemover(arr) {
 }
 ```
 
+```javascript
+function duplicateRemover(arr) {
+  let uniqueArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let currentElement = arr[i];
+    //let currentElement = arr[i].toLowerCase();
+    if (!uniqueArr.includes(currentElement)) {
+      uniqueArr.push(currentElement);
+    }
+  }
+  return uniqueArr;
+}
+```
+
 ⭐ method-less solution
 
 ```javascript
