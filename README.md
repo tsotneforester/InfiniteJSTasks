@@ -98,10 +98,18 @@ function buildRightAligned(height) {
   }
 }
 
-function buildRLeftAligned(height) {
-    for (let i = 1; i <= height; i++) {
-        console.log(' '.repeat(height - i) + '#'.repeat(i));
-    }
+function buildLeftAligned(height) {
+  let result = '';
+  for (let i = 0; i < height; i++) {
+    result += '#';
+    console.log(result.padStart(height, ' '));
+  }
+}
+
+function buildLeftAligned(height) {
+  for (let i = 1; i <= height; i++) {
+    console.log(' '.repeat(height - i) + '#'.repeat(i));
+  }
 }
 
 
