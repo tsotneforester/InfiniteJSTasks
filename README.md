@@ -32,7 +32,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Methods | Taks N |
 | :------ | :-----: |
-| reduce  | 1 |
+| reduce  | 1, 54 |
 ---
 
 ### 🟢 01 - Property Counter
