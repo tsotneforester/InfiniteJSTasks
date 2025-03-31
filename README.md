@@ -30,9 +30,9 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | :---------------- | :-----: |
 | Frequency Counter |   46, 29, 32, 3 , 53, 1 |
 
-| Methods| Taks N |
-| :-- -- | :-----: |
-| reduce | 1 |
+| Methods | Taks N |
+| :------ | :-----: |
+| reduce  | 1 |
 ---
 
 ### 🟢 01 - Property Counter
