@@ -28,25 +28,46 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 | Algorithm         | Taks N |
 | :---------------- | :-----: |
-| Frequency Counter |   46, 29, 32, 3 , 53 |
+| Frequency Counter |   46, 29, 32, 3 , 53, 1 |
 
 ---
 
-### 🟢 01 - Hello Universe!
+### 🟢 01 - Property Counter
 
 ```javascript
-console.log(sayHello()); // Hello Universe!
+const persons = [
+  { name: 'Alice', level: 'admin' },
+  { name: 'Bob', level: 'user' },
+  { name: 'Charlie', level: 'admin' },
+  { name: 'David', level: 'user' },
+  { name: 'Eve', level: 'guest' },
+];
 
-function sayHello() {
-  //Write a function to generate greeting to the whole universe
+console.log(countPersonsByLevel(persons, 'level'));
+
+// {
+//  admin: 2,
+//  user: 2,
+//  guest: 1
+// };
+
+function countPersonsByLevel(arr, property) {
+  //Write a function that takes two parameters: arr, which is expected to be an array of objects (each representing a person), and property value, which is a string. function returns the accumulator object, which contains counts of how many persons correspond to each unique value of the specified property.
 }
 ```
 
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function sayHello() {
-  return "Hello Universe!";
+function countPersonsByLevel(arr, property) {
+  return arr.reduce((acc, person) => {
+    if (!acc[person[property]]) {
+      acc[person[property]] = 0;
+    }
+
+    acc[person[property]]++;
+    return acc;
+  }, {});
 }
 ```
 
