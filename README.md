@@ -30,6 +30,9 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | :---------------- | :-----: |
 | Frequency Counter |   46, 29, 32, 3 , 53, 1 |
 
+| Methods| Taks N |
+| :-- -- | :-----: |
+| reduce | 1 |
 ---
 
 ### 🟢 01 - Property Counter
@@ -71,6 +74,29 @@ function countPersonsByLevel(arr, property) {
     acc[person[property]]++;
     return acc;
   }, {});
+}
+```
+```javascript
+function countPersonsByLevel(arr, property) {
+  // Initialize an empty object to hold the counts
+  const counts = {};
+
+  // Iterate over each person in the array
+  arr.forEach(person => {
+    // Get the value of the specified property
+    const level = person[property];
+
+    // If the level is already a key in the counts object, increment its value
+    if (counts[level]) {
+      counts[level]++;
+    } else {
+      // Otherwise, initialize it to 1
+      counts[level] = 1;
+    }
+  });
+
+  // Return the counts object
+  return counts;
 }
 ```
 
