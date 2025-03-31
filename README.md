@@ -52,7 +52,10 @@ console.log(countPersonsByLevel(persons, 'level'));
 // };
 
 function countPersonsByLevel(arr, property) {
-  //Write a function that takes two parameters: arr, which is expected to be an array of objects (each representing a person), and property value, which is a string. function returns the accumulator object, which contains counts of how many persons correspond to each unique value of the specified property.
+  //Write a function that takes two parameters: arr, which is expected to be an
+  //array of objects(each representing a person), and property value, which is a
+  //string.function returns the accumulator object, which contains counts of how
+  //many persons correspond to each unique value of the specified property.
 }
 ```
 
