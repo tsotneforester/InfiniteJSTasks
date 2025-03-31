@@ -2529,7 +2529,7 @@ function highestAmountObject(arr, property) {
 </details>
 
 ---
-### 🟢 55 - Water Container
+### 🟡 55 - Water Container
 
 ```javascript
 const bars = [1, 8, 6, 2, 9, 4];
