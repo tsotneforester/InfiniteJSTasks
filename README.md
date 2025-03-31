@@ -2451,7 +2451,7 @@ function updateQuantity(arr, itemName, newQuantity) {
 
 ---
 
-### 🟢 - Find Single
+### 🟢 53 - Find Single
 
 ```javascript
 const couples = [10, 5, 10, 5, 12];
@@ -2497,7 +2497,38 @@ function findSingle(arr) {
 </details>
 
 ---
+### 🟢 54 - Find By Largest Amount
 
+```javascript
+const data = [
+  { name: 'Object 1', weight: 50 },
+  { name: 'Object 2', weight: 150 },
+  { name: 'Object 3', weight: 75 },
+  { name: 'Object 4', weight: 200 },
+];
+
+console.log(highestAmountObject(data, 'weight')); //{ name: 'Object 4', weight: 200 },
+
+function highestAmountObject(arr, property) {
+  //Write a function that takes two parameters: arr, which is expected to be an
+  //array of objects and property key as string representing some amount.
+  //function returns object that is highest by amount
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function highestAmountObject(arr, property) {
+  return arr.reduce((max, obj) => {
+    return obj[property] > max[property] ? obj : max;
+  }, arr[0]);
+}
+```
+
+</details>
+
+---
 <!--
 
 ### 🟢🔴🟡
