@@ -2529,6 +2529,42 @@ function highestAmountObject(arr, property) {
 </details>
 
 ---
+### 🟢 55 - Water Container
+
+```javascript
+const bars = [1, 8, 6, 2, 9, 4];
+console.log(maxArea(bars)); // 24
+
+function maxArea(arr) {
+  // You are given an array of heights of length n. There are n vertical lines
+  //drawn such that the two endpoints of the ith line are(i, 0) and(i, height[i]).
+  // Find two lines that together with the x-axis form a container, such that the
+  //container contains the most water.
+  // Return the maximum amount of water a container can store.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function maxArea(arr) {
+  let maxArea = 0;
+  for (let p = 0; p < arr.length; p++) {
+    for (let p1 = p + 1; p1 < arr.length; p1++) {
+      const height = Math.min(arr[p], arr[p1]);
+      const width = p1 - p;
+      const area = height * width;
+
+      maxArea = Math.max(maxArea, area);
+    }
+  }
+  return maxArea;
+}
+```
+
+</details>
+
+---
 <!--
 
 ### 🟢🔴🟡
