@@ -2576,7 +2576,8 @@ console.log(numberToAlphabet(27)); //AA
 console.log(numberToAlphabet(2345)); //ELC
 
 function numberToAlphabet(num) {
-  //write a function that converts a positive integer into its corresponding representation in a base-26 alphabetic system, similar to how Excel columns are labeled (A, B, C, ..., Z, AA, AB, ..., AZ, BA, ..., ZZ, AAA, etc.).
+  //write a function that converts a positive integer into its corresponding representation in a base-26
+  //alphabetic system, similar to how Excel columns are labeled (A, B, C, ..., Z, AA, AB, ..., AZ, BA, ..., ZZ, AAA, etc.).
 }
 ```
 
