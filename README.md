@@ -33,6 +33,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | Methods | Taks N |
 | :------ | :-----: |
 | reduce  | 1, 54 |
+| while  | 56 |
 ---
 
 ### 🟢 01 - Property Counter
@@ -2559,6 +2560,44 @@ function maxArea(arr) {
     }
   }
   return maxArea;
+}
+```
+
+</details>
+
+---
+
+### 🟢 56 - Number To Alphabet
+
+```javascript
+console.log(numberToAlphabet(1)); //A
+console.log(numberToAlphabet(26)); //z
+console.log(numberToAlphabet(27)); //AA
+console.log(numberToAlphabet(2345)); //ELC
+
+function numberToAlphabet(num) {
+  //write a function that converts a positive integer into its corresponding representation in a base-26 alphabetic system, similar to how Excel columns are labeled (A, B, C, ..., Z, AA, AB, ..., AZ, BA, ..., ZZ, AAA, etc.).
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function numberToAlphabet(num) {
+  if (!Number.isInteger(num) || num < 1) {
+    return 'Please provide a positive integer as input';
+  }
+
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let result = '';
+
+  while (num > 0) {
+    const remainder = (num - 1) % 26;
+    result += alphabet[remainder];
+    num = Math.floor((num - 1) / 26);
+  }
+
+  return result;
 }
 ```
 
