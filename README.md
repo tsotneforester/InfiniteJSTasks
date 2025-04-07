@@ -30,11 +30,11 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | :---------------- | :-------------------: |
 | Frequency Counter | 46, 29, 32, 3 , 53, 1 |
 
-| Methods   | Taks N |
-| :-------- | :----: |
-| reduce    | 1, 54  |
-| while     |   56   |
-| recursion |   57   |
+| Methods   |  Taks N   |
+| :-------- | :-------: |
+| reduce    | 1, 54, 58 |
+| while     |    56     |
+| recursion |    57     |
 
 ---
 
@@ -2650,6 +2650,34 @@ function flattenArray(arr) {
 ```javascript
 function flattenArray(arr) {
   return arr.flat(Infinity);
+}
+```
+
+</details>
+
+---
+
+### 🟢 58 - Squared List
+
+```javascript
+const arr = [-3, 4.8, 5, 3, -3.2];
+console.log(squareList(arr)); //🔰 [25, 9,]
+
+function squareList(arr) {
+  // Write a function that returns the accumulator array, which contains the squares of all positive integers from the input array.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function squareList(arr) {
+  return arr.reduce((acc, cur, i) => {
+    if (Number.isInteger(cur) && cur > 0) {
+      acc.push(cur * cur);
+    }
+    return acc;
+  }, []);
 }
 ```
 
