@@ -26,14 +26,16 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 
 </h5>
 
-| Algorithm         | Taks N |
-| :---------------- | :-----: |
-| Frequency Counter |   46, 29, 32, 3 , 53, 1 |
+| Algorithm         |        Taks N         |
+| :---------------- | :-------------------: |
+| Frequency Counter | 46, 29, 32, 3 , 53, 1 |
 
-| Methods | Taks N |
-| :------ | :-----: |
-| reduce  | 1, 54 |
-| while  | 56 |
+| Methods   | Taks N |
+| :-------- | :----: |
+| reduce    | 1, 54  |
+| while     |   56   |
+| recursion |   57   |
+
 ---
 
 ### 🟢 01 - Property Counter
@@ -77,6 +79,7 @@ function countPersonsByLevel(arr, property) {
   }, {});
 }
 ```
+
 ```javascript
 function countPersonsByLevel(arr, property) {
   // Initialize an empty object to hold the counts
@@ -133,11 +136,9 @@ buildPyramid(5);
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-
-
 function buildRightAligned(height) {
   for (let i = 1; i <= height; i++) {
-    console.log("#".repeat(i));
+    console.log('#'.repeat(i));
   }
 }
 
@@ -163,7 +164,6 @@ function buildLeftAligned(height) {
   }
 }
 
-
 function buildPyramid(height) {
   let result = '';
   for (let i = 0; i < height; i++) {
@@ -186,7 +186,7 @@ function buildPyramid(height) {
 ### 🟢 03 - Mode
 
 ```javascript
-const results = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+const results = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 console.log(getMode(results)); //a - 5 times
 
 function getMode(array) {
@@ -205,7 +205,7 @@ function getMode(arr) {
   }
 
   let maxFrequency = 0;
-  let character = "";
+  let character = '';
 
   for (const key in frequencyObject) {
     if (frequencyObject[key] > maxFrequency) {
@@ -225,7 +225,7 @@ function getMode(arr) {
 ### 🟢 04 - Toggle Case
 
 ```javascript
-let str = "Brown Fox";
+let str = 'Brown Fox';
 console.log(caseToggler(str)); //bROWN fOX
 
 function caseToggler(string) {
@@ -237,7 +237,7 @@ function caseToggler(string) {
 
 ```javascript
 function caseToggler(string) {
-  let result = "";
+  let result = '';
 
   for (const char of string) {
     if (char == char.toUpperCase()) {
@@ -249,7 +249,6 @@ function caseToggler(string) {
 
   return result;
 }
-
 ```
 
 </details>
@@ -259,7 +258,7 @@ function caseToggler(string) {
 ### 🟢 05 - Duplicate Remove (string)
 
 ```javascript
-const cars = ["Mini", "mini", "fiat", "fiat", "bmw", "mini", "OPEL", "Mini", "opel", "OPEL", "Mini", "bmw", "opel", "OPEL", "bmw", "opel", "bmw", "mini", "opel", "bmw", "fiat", "OPEL", "fiat", "bmw"];
+const cars = ['Mini', 'mini', 'fiat', 'fiat', 'bmw', 'mini', 'OPEL', 'Mini', 'opel', 'OPEL', 'Mini', 'bmw', 'opel', 'OPEL', 'bmw', 'opel', 'bmw', 'mini', 'opel', 'bmw', 'fiat', 'OPEL', 'fiat', 'bmw'];
 
 console.log(duplicateRemover(cars));
 // 1️⃣ ['Mini', 'mini', 'fiat', 'bmw', 'OPEL', 'opel']
@@ -385,7 +384,7 @@ function aggregrate(...arr) {
 ```javascript
 function aggregrate(...arr) {
   let args = [...arr]; // arguments array
-  let arrayLengths = args.map((e) => {
+  let arrayLengths = args.map(e => {
     return e.length;
   }); // array of argument array lengthes
 
@@ -396,7 +395,7 @@ function aggregrate(...arr) {
   }); // [0, 0, 0, 0, 0]
 
   for (let i = 0; i < padLength; i++) {
-    args.forEach((e) => {
+    args.forEach(e => {
       AggArray[i] += e[i] || 0;
     });
   }
@@ -450,7 +449,7 @@ function union(...arr) {
 ### 🟢 09 - Numberify
 
 ```javascript
-const array = [NaN, 0, 15, false, -22, "", undefined, 47, null, [5, 7]];
+const array = [NaN, 0, 15, false, -22, '', undefined, 47, null, [5, 7]];
 console.log(numberify(array)); //[0, 15, -22, 47]
 
 function numberify(arr) {
@@ -462,8 +461,8 @@ function numberify(arr) {
 
 ```javascript
 function numberify(arr) {
-  return arr.filter((e) => {
-    return typeof e === "number" && !isNaN(e);
+  return arr.filter(e => {
+    return typeof e === 'number' && !isNaN(e);
   });
 }
 ```
@@ -487,7 +486,7 @@ function removeItem(array, item) {
 
 ```javascript
 function removeItem(array, item) {
-  return array.filter((elem) => elem !== item);
+  return array.filter(elem => elem !== item);
 }
 ```
 
@@ -526,7 +525,7 @@ function arrayGenerator(start, length, step) {
 ### 🟢 12 - GPX
 
 ```javascript
-const arr = ["G", "P", "X"];
+const arr = ['G', 'P', 'X'];
 console.log(fillArr(arr, 5)); //["G", "P", "X", "G", "P"]
 
 function fillArr(arr, n) {
@@ -553,19 +552,19 @@ function fillArr(arr, n) {
 const genres = [
   {
     id: 28,
-    name: "Action",
+    name: 'Action',
   },
   {
     id: 12,
-    name: "Adventure",
+    name: 'Adventure',
   },
   {
     id: 14,
-    name: "Thriller",
+    name: 'Thriller',
   },
   {
     id: 21,
-    name: "Drama",
+    name: 'Drama',
   },
 ];
 let ids = [28, 21];
@@ -583,8 +582,8 @@ function vlookup(ids, data) {
 function vlookup(ids, data) {
   let result = [];
 
-  ids.forEach((value) => {
-    data.forEach((e) => {
+  ids.forEach(value => {
+    data.forEach(e => {
       if (value === e.id) {
         result.push(e.name);
       }
@@ -644,7 +643,7 @@ function overlapExclude(f, l) {
 
 ```javascript
 function overlapExclude(f, l) {
-  return f.filter((num) => {
+  return f.filter(num => {
     if (l.indexOf(num) == -1) {
       return num;
     }
@@ -679,8 +678,8 @@ function openOrSenior(data) {
 
 ```javascript
 function openOrSenior(data) {
-  return data.map((e) => {
-    return e[0] >= 55 && e[1] > 7 ? "Senior" : "Open";
+  return data.map(e => {
+    return e[0] >= 55 && e[1] > 7 ? 'Senior' : 'Open';
   });
 }
 ```
@@ -716,10 +715,10 @@ function depositsAbove(num, data) {
 ### 🟢 18 - Titlecase
 
 ```javascript
-const exceptions = ["a", "an", "and", "the", "but", "or", "on", "in", "with", "of"];
+const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with', 'of'];
 
-console.log(convertTitleCase("this is a nice title of great writer"));
-console.log(convertTitleCase("and then there were NONE"));
+console.log(convertTitleCase('this is a nice title of great writer'));
+console.log(convertTitleCase('and then there were NONE'));
 
 // result: "This Is a Nice Title of Great Writer"
 // result: "And Then There Were None"
@@ -734,13 +733,13 @@ function convertTitleCase(string) {
 
 ```javascript
 function convertTitleCase(string) {
-  const capitzalize = (str) => str[0].toUpperCase() + str.slice(1);
+  const capitzalize = str => str[0].toUpperCase() + str.slice(1);
 
   const tempString = string
     .toLowerCase()
-    .split(" ")
-    .map((word) => (exceptions.includes(word) ? word : capitzalize(word)))
-    .join(" ");
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitzalize(word)))
+    .join(' ');
 
   return capitzalize(tempString);
 }
@@ -753,7 +752,7 @@ function convertTitleCase(string) {
 ### 🟢 19 - Trimmer
 
 ```javascript
-const string = "   This  is   a    test.  ";
+const string = '   This  is   a    test.  ';
 
 console.log(trimmer(string)); //This is a test.
 
@@ -766,7 +765,7 @@ function trimmer(str) {
 
 ```javascript
 function trimmer(str) {
-  return str.replace(/ {2,}/g, " ").trim();
+  return str.replace(/ {2,}/g, ' ').trim();
 }
 ```
 
@@ -777,8 +776,8 @@ function trimmer(str) {
 ### 🟡 20 - Chess Board
 
 ```javascript
-const whiteSquare = "☐";
-const BlackSquare = "☒";
+const whiteSquare = '☐';
+const BlackSquare = '☒';
 
 console.log(chessify(8));
 
@@ -800,9 +799,9 @@ function chessify(size) {
 
 ```javascript
 function chessify(size) {
-  let node = "";
+  let node = '';
   for (let horizontalLine = 1; horizontalLine <= size; horizontalLine++) {
-    let lineNode = "";
+    let lineNode = '';
     for (let verticalLine = 0; verticalLine < size; verticalLine++) {
       if (horizontalLine % 2 == 1) {
         verticalLine % 2 == 0 ? (lineNode += whiteSquare) : (lineNode += BlackSquare);
@@ -811,7 +810,7 @@ function chessify(size) {
       }
     }
 
-    node += lineNode + "\n";
+    node += lineNode + '\n';
   }
   return node;
 }
@@ -826,24 +825,24 @@ function chessify(size) {
 ```javascript
 const users = [
   {
-    id: "64ede4012b31077af2ded83e",
-    name: "Gould Daniels",
-    address: "Agate Court, Clarksburg",
-    balance: "$277.49",
+    id: '64ede4012b31077af2ded83e',
+    name: 'Gould Daniels',
+    address: 'Agate Court, Clarksburg',
+    balance: '$277.49',
     age: 20,
-    registered: "2017-11-23T10:31:14",
+    registered: '2017-11-23T10:31:14',
   },
   {
-    id: "64ede401d067f20dbc0ea8c3",
-    name: "Paula Henderson",
-    address: "Lawton Street, Zarephath",
-    balance: "$322.43",
+    id: '64ede401d067f20dbc0ea8c3',
+    name: 'Paula Henderson',
+    address: 'Lawton Street, Zarephath',
+    balance: '$322.43',
     age: 12,
-    registered: "2017-01-13T07:36:37",
+    registered: '2017-01-13T07:36:37',
   },
 ];
 
-const allowed = ["id", "name", "age"];
+const allowed = ['id', 'name', 'age'];
 
 console.log(filterIn(users, allowed));
 
@@ -871,8 +870,8 @@ function filterIn(data, arr) {
 function filterIn(data, arr) {
   for (let obj of data) {
     Object.keys(obj)
-      .filter((i) => !arr.includes(i))
-      .forEach((e) => delete obj[e]);
+      .filter(i => !arr.includes(i))
+      .forEach(e => delete obj[e]);
   }
 
   return data;
@@ -888,24 +887,24 @@ function filterIn(data, arr) {
 ```javascript
 const users = [
   {
-    id: "64ede4012b31077af2ded83e",
-    name: "Gould Daniels",
-    address: "Agate Court, Clarksburg",
-    balance: "$277.49",
+    id: '64ede4012b31077af2ded83e',
+    name: 'Gould Daniels',
+    address: 'Agate Court, Clarksburg',
+    balance: '$277.49',
     age: 20,
-    registered: "2017-11-23T10:31:14",
+    registered: '2017-11-23T10:31:14',
   },
   {
-    id: "64ede401d067f20dbc0ea8c3",
-    name: "Paula Henderson",
-    address: "Lawton Street, Zarephath",
-    balance: "$322.43",
+    id: '64ede401d067f20dbc0ea8c3',
+    name: 'Paula Henderson',
+    address: 'Lawton Street, Zarephath',
+    balance: '$322.43',
     age: 12,
-    registered: "2017-01-13T07:36:37",
+    registered: '2017-01-13T07:36:37',
   },
 ];
 
-const toBeDeleted = ["address", "balance", "registered"];
+const toBeDeleted = ['address', 'balance', 'registered'];
 
 console.log(filterOut(users, toBeDeleted));
 
@@ -932,7 +931,7 @@ function filterOut(data, arr) {
 ```javascript
 function filterOut(data, arr) {
   for (let obj of data) {
-    arr.forEach((e) => delete obj[e]);
+    arr.forEach(e => delete obj[e]);
   }
   return data;
 }
@@ -947,18 +946,18 @@ function filterOut(data, arr) {
 ```javascript
 const users = [
   {
-    id: "64ede4012b31077af2ded83e",
-    name: "Gould Daniels",
-    color: ["#074454", "#364f08", "#ad62a4"],
+    id: '64ede4012b31077af2ded83e',
+    name: 'Gould Daniels',
+    color: ['#074454', '#364f08', '#ad62a4'],
   },
   {
-    id: "64ede401d067f20dbc0ea8c3",
-    name: "Paula Henderson",
-    color: ["#490525", "#074454", "#525946"],
+    id: '64ede401d067f20dbc0ea8c3',
+    name: 'Paula Henderson',
+    color: ['#490525', '#074454', '#525946'],
   },
 ];
 
-console.log(uniqueColors(users, "color"));
+console.log(uniqueColors(users, 'color'));
 //["#074454", "#364f08", "#ad62a4", "#490525", "#525946"]
 
 function uniqueColors(data, key) {
@@ -970,7 +969,7 @@ function uniqueColors(data, key) {
 
 ```javascript
 function uniqueColors(data, key) {
-  return [...new Set(data.map((obj) => obj[key]).flat())];
+  return [...new Set(data.map(obj => obj[key]).flat())];
 }
 ```
 
@@ -983,9 +982,9 @@ function uniqueColors(data, key) {
 inspired by [CS50](https://cs50.harvard.edu/x/2024/psets/6/dna/) :books:
 
 ```javascript
-const DNA = "GGGGAATATGGTTATTAAGTTAAAGAGAAAGAAAGATGTGGGTGATATTAATGAATGAATGAATGAATGAATGAATGAATGTTATGATAGAAGGATAAAAATTAAATAAAATTTTAGTTAATAGAAAAAGAATATATAGAGATCAGATCTATCTATCTATCTTAAGGAGAGGAAGAGATAAAAAAATATAATTAAGGAA";
+const DNA = 'GGGGAATATGGTTATTAAGTTAAAGAGAAAGAAAGATGTGGGTGATATTAATGAATGAATGAATGAATGAATGAATGAATGTTATGATAGAAGGATAAAAATTAAATAAAATTTTAGTTAATAGAAAAAGAATATATAGAGATCAGATCTATCTATCTATCTTAAGGAGAGGAAGAGATAAAAAAATATAATTAAGGAA';
 
-const STR = "AATG"; //Short Tandem Repeats
+const STR = 'AATG'; //Short Tandem Repeats
 
 console.log(getMaxSequence(DNA, STR)); // 8
 
@@ -1032,8 +1031,8 @@ function getMaxSequence(str, subStr, indexes = [], startIdx = 0) {
 ### 🟡 25 - Array of Indexes
 
 ```javascript
-const quote = "Education never ends, Watson!";
-console.log(getIndexes(quote, "on")); // [7, 26]
+const quote = 'Education never ends, Watson!';
+console.log(getIndexes(quote, 'on')); // [7, 26]
 
 function getIndexes(text, str) {
   //Write a function to generate array of substring indexes in given quote
@@ -1062,8 +1061,8 @@ function getIndexes(text, str) {
 ### 🟢 26 - Reduced Array
 
 ```javascript
-const flags = ["ARM", "AZR", "GEO", "GEO", "TUR", "GEO"];
-console.log(getIndexes(flags, "GEO")); //[2, 3, 5]
+const flags = ['ARM', 'AZR', 'GEO', 'GEO', 'TUR', 'GEO'];
+console.log(getIndexes(flags, 'GEO')); //[2, 3, 5]
 
 function getIndexes(arr, str) {
   //Write a function to generate array of indexes of given string in given array. .reduce is preferable
@@ -1103,7 +1102,7 @@ function findCommonItems(a, b) {
 
 ```javascript
 function findCommonItems(a, b) {
-  return a.filter((num) => {
+  return a.filter(num => {
     if (b.includes(num)) {
       return num;
     }
@@ -1137,7 +1136,7 @@ function bulkOverlaping(arr) {
   const commonNumbers = [];
 
   for (let i = 0; i < arr[0].length; i++) {
-    if (arr.every((array) => array.includes(arr[0][i]))) {
+    if (arr.every(array => array.includes(arr[0][i]))) {
       commonNumbers.push(arr[0][i]);
     }
   }
@@ -1147,8 +1146,8 @@ function bulkOverlaping(arr) {
 
 function bulkOverlaping(arr) {
   let commonNumbers = arr.reduce((acc, e) => {
-    e.forEach((item) => {
-      if (arr.every((array) => array.includes(item))) {
+    e.forEach(item => {
+      if (arr.every(array => array.includes(item))) {
         acc.push(item);
       }
     });
@@ -1168,8 +1167,8 @@ function bulkOverlaping(arr) {
 An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 ```javascript
-const word1 = "Listen";
-const word2 = "silent";
+const word1 = 'Listen';
+const word2 = 'silent';
 console.log(areAnagrams(word1, word2)); // true
 
 function areAnagrams(word1, word2) {
@@ -1181,13 +1180,15 @@ function areAnagrams(word1, word2) {
 
 ```javascript
 function areAnagrams(word1, word2) {
-  const sortedWord1 = [...word1.toLowerCase()].sort().join("");
-  const sortedWord2 = [...word2.toLowerCase()].sort().join("");
+  const sortedWord1 = [...word1.toLowerCase()].sort().join('');
+  const sortedWord2 = [...word2.toLowerCase()].sort().join('');
 
   return sortedWord1 === sortedWord2;
 }
 ```
+
 more sophistaced solution
+
 ```javascript
 function areAnagrams(word1, word2) {
   if (word1.length != word2.length) {
@@ -1257,8 +1258,8 @@ function hasZeroSumPair(arr) {
 ### 🟢 31 - Objectify
 
 ```javascript
-const keys = ["name", "age", "country"];
-const values = ["Tom", 29, "Poland"];
+const keys = ['name', 'age', 'country'];
+const values = ['Tom', 29, 'Poland'];
 
 console.log(objectify(keys, values));
 // {name: 'Tom', age: 29, country: 'Poland'}
@@ -1333,7 +1334,7 @@ function isEqual(arr1, arr2) {
   }
   return true;
 }
-````
+```
 
 </details>
 
@@ -1343,14 +1344,14 @@ function isEqual(arr1, arr2) {
 
 ```javascript
 const inbox = [
-  { from: "alice@beer.com", to: "bob@code.com", subject: "Urgent Meeting Required", body: "We need to discuss the project milestones." },
-  { from: "carol@tech.com", to: "dan@developer.com", subject: "System Update Report", body: "Please fix this critical bug ASAP." },
-  { from: "eve@company.com", to: "frank@client.com", subject: "Project Deadline Approaching", body: "Please review the project timeline." },
-  { from: "grace@management.com", to: "beer@project.com", subject: "Quick Sync", body: "We are out of supplies, please restock!" },
-  { from: "ivan@development.com", to: "judy@bugs.com", subject: "Code Review", body: "Let’s ensure our code is clean and maintainable." },
-  { from: "kyle@support.com", to: "laura@customer.com", subject: "Update on Support Ticket", body: "Your issue will be resolved before the bedtime." },
+  { from: 'alice@beer.com', to: 'bob@code.com', subject: 'Urgent Meeting Required', body: 'We need to discuss the project milestones.' },
+  { from: 'carol@tech.com', to: 'dan@developer.com', subject: 'System Update Report', body: 'Please fix this critical bug ASAP.' },
+  { from: 'eve@company.com', to: 'frank@client.com', subject: 'Project Deadline Approaching', body: 'Please review the project timeline.' },
+  { from: 'grace@management.com', to: 'beer@project.com', subject: 'Quick Sync', body: 'We are out of supplies, please restock!' },
+  { from: 'ivan@development.com', to: 'judy@bugs.com', subject: 'Code Review', body: 'Let’s ensure our code is clean and maintainable.' },
+  { from: 'kyle@support.com', to: 'laura@customer.com', subject: 'Update on Support Ticket', body: 'Your issue will be resolved before the bedtime.' },
 ];
-const spam = ["beer", "bug", "deadline"];
+const spam = ['beer', 'bug', 'deadline'];
 
 console.log(spamDetector(spam, inbox));
 //all objects get 'spam: true' but LAST ONE, as none on the words are found in last object
@@ -1391,7 +1392,7 @@ function spamDetector(words, objects) {
 ### 🟢 34 - Reverse Array
 
 ```javascript
-const arr = ["A", "C", "B"];
+const arr = ['A', 'C', 'B'];
 console.log(reverseArray(arr));
 // → ["B", "C", "A"];
 
@@ -1442,9 +1443,9 @@ function stringReverse(str) {
 ```javascript
 function stringReverse(str) {
   return str
-    .split("")
+    .split('')
     .map((_, i, r) => r[r.length - i - 1]) // .reverse()
-    .join("");
+    .join('');
 }
 ```
 
@@ -1461,18 +1462,17 @@ function isPalindrome(word) {
   //🔰 You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes
 }
 
-
-console.log(isPalindrome("e_ yE")); //true
-console.log(isPalindrome("A man, a plan, a canal. Panama")); //true
-console.log(isPalindrome("never odd or even")); //true
+console.log(isPalindrome('e_ yE')); //true
+console.log(isPalindrome('A man, a plan, a canal. Panama')); //true
+console.log(isPalindrome('never odd or even')); //true
 ```
 
 <details><summary><b>Answer</b></summary>
 
 ```javascript
 function isPalindrome(word) {
-  let filtered = word.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-  return filtered === filtered.split("").reverse().join("");
+  let filtered = word.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  return filtered === filtered.split('').reverse().join('');
 }
 ```
 
@@ -1568,7 +1568,7 @@ function maxSubarraySum(arr, size) {
 ### 🟢 38 - Vowels & Consonants
 
 ```javascript
-const string = "innovation";
+const string = 'innovation';
 console.log(countVowelsAndConsonants(string)); //{vowels: 5, consonants: 5}
 
 function countVowelsAndConsonants(word) {
@@ -1580,9 +1580,9 @@ function countVowelsAndConsonants(word) {
 
 ```javascript
 function countVowelsAndConsonants(word) {
-  const vowelsArr = ["i", "e", "o", "u", "a"];
+  const vowelsArr = ['i', 'e', 'o', 'u', 'a'];
 
-  let arr = word.toLowerCase().split("");
+  let arr = word.toLowerCase().split('');
 
   let vowels = 0;
   let consonants = 0;
@@ -1607,9 +1607,9 @@ function countVowelsAndConsonants(word) {
 
 ```javascript
 const arrayOfObjects = [
-  { name: "Ann", age: 25, city: "Paris" },
-  { name: "Thomas", age: 30, country: "USA" },
-  { name: "Salomea", city: "Tbilisi", occupation: "Engineer" },
+  { name: 'Ann', age: 25, city: 'Paris' },
+  { name: 'Thomas', age: 30, country: 'USA' },
+  { name: 'Salomea', city: 'Tbilisi', occupation: 'Engineer' },
 ];
 console.log(uniqueKeys(arrayOfObjects));
 // ['name', 'age', 'city', 'country', 'occupation']
@@ -1623,7 +1623,7 @@ function uniqueKeys(arr) {
 
 ```javascript
 function uniqueKeys(arr) {
-  const allKeys = arr.flatMap((e) => Object.keys(e));
+  const allKeys = arr.flatMap(e => Object.keys(e));
   return [...new Set(allKeys)];
 }
 ```
@@ -1635,9 +1635,9 @@ function uniqueKeys(arr) {
 ### 🟢 40 - Pangram Check
 
 ```javascript
-const string1 = "The quick brown fox jumps over the lazy dog";
-const string2 = "Waltz, bad nymph, for quick jigs vex.";
-const string3 = "The five boxing wizard jump quickly.";
+const string1 = 'The quick brown fox jumps over the lazy dog';
+const string2 = 'Waltz, bad nymph, for quick jigs vex.';
+const string3 = 'The five boxing wizard jump quickly.';
 
 console.log(isPangram(string1)); // ✔️ true
 console.log(isPangram(string2)); // ✔️ true
@@ -1657,8 +1657,8 @@ function isPangram(sentence) {
     ...new Set(
       sentence
         .toLowerCase()
-        .replace(/[^a-z]/g, "") // removes non-letter characters
-        .split("")
+        .replace(/[^a-z]/g, '') // removes non-letter characters
+        .split('')
     ),
   ];
   return arr.length == 26;
@@ -1688,7 +1688,7 @@ function isPangram(sentence) {
 ### 🟢 41 - Unique Letters Count
 
 ```javascript
-console.log(countUniqueLetters("Mississippi")); // { m: 1, i: 4, s: 4, p: 2 }
+console.log(countUniqueLetters('Mississippi')); // { m: 1, i: 4, s: 4, p: 2 }
 
 function countUniqueLetters(str) {
   //Write a function that coutns unique letters in string
@@ -1761,7 +1761,7 @@ function findUniqueNumbers(arr) {
     }
   }
 
-  return arr.filter((num) => numberCounts[num] === 1);
+  return arr.filter(num => numberCounts[num] === 1);
 }
 ```
 
@@ -1784,7 +1784,7 @@ function arrayCounter(arr) {
 
 ```javascript
 function arrayCounter(arr) {
-  return arr.filter((n) => Array.isArray(n)).length;
+  return arr.filter(n => Array.isArray(n)).length;
 }
 ```
 
@@ -1824,8 +1824,8 @@ function removeElement(arr, val) {
 ### 🟡 45 - Text Encryptor
 
 ```javascript
-console.log(encryptor("efg", 1, 4)); //abc
-console.log(encryptor("XYz", 2, 2)); //Zab
+console.log(encryptor('efg', 1, 4)); //abc
+console.log(encryptor('XYz', 2, 2)); //Zab
 
 function encryptor(text, orint, k) {
   //Your task is to develop encryption tool to encrypt a given text. Each character should be shifted by k positions to the left or right, indicated by orient. The encryption should wrap around the alphabet, meaning that 'y' becomes 'b' if shifted three positions to the right.
@@ -1845,24 +1845,24 @@ function encryptor(text, orint, k) {
 
   for (const letter of text) {
     if (!regex.test(letter)) {
-      alert("check text, only letters and spaces are allowed");
+      alert('check text, only letters and spaces are allowed');
       return;
     }
   }
 
   if (!Number.isInteger(k) || k <= 0) {
-    alert("only positive integers are allowed");
+    alert('only positive integers are allowed');
     return;
   }
 
   if (orint !== 1 && orint !== 2) {
-    alert("1 indicates to left shift, 2 indicates to right shift");
+    alert('1 indicates to left shift, 2 indicates to right shift');
     return;
   }
   //-------------- correctOverflow()
   function correctOverflow(num) {
-    const lowerBound = "a".charCodeAt(); //97
-    const upperBound = "z".charCodeAt(); //122
+    const lowerBound = 'a'.charCodeAt(); //97
+    const upperBound = 'z'.charCodeAt(); //122
 
     if (num < lowerBound) {
       return upperBound + 1 - (lowerBound - num);
@@ -1876,7 +1876,7 @@ function encryptor(text, orint, k) {
   const newK = k % 26;
   let isLeft = orint == 2 ? false : true;
 
-  let ArrayOfLetterInfo = [...text].map((letter) => {
+  let ArrayOfLetterInfo = [...text].map(letter => {
     let obj = {};
     obj.letter = letter;
     obj.charCode = letter.toLowerCase().charCodeAt();
@@ -1897,7 +1897,7 @@ function encryptor(text, orint, k) {
 
   //console.log(ArrayOfLetterInfo);
 
-  let encryptedText = ArrayOfLetterInfo.map((obj) => {
+  let encryptedText = ArrayOfLetterInfo.map(obj => {
     if (obj.isUpperCase) {
       return String.fromCharCode(obj.encriptionCode).toUpperCase();
     }
@@ -1905,7 +1905,7 @@ function encryptor(text, orint, k) {
     return String.fromCharCode(obj.encriptionCode);
   });
 
-  return encryptedText.join("");
+  return encryptedText.join('');
 }
 ```
 
@@ -1968,38 +1968,38 @@ function same(arr1, arr2) {
 ```javascript
 const courses = [
   {
-    course: "Mathematics",
+    course: 'Mathematics',
     students: [
-      { firstName: "John", lastName: "Doe" },
-      { firstName: "Jane", lastName: "Smith" },
-      { firstName: "Michael", lastName: "Johnson" },
-      { firstName: "Emily", lastName: "Davis" },
-      { firstName: "William", lastName: "Brown" },
-      { firstName: "Sophia", lastName: "Taylor" },
-      { firstName: "James", lastName: "Anderson" },
+      { firstName: 'John', lastName: 'Doe' },
+      { firstName: 'Jane', lastName: 'Smith' },
+      { firstName: 'Michael', lastName: 'Johnson' },
+      { firstName: 'Emily', lastName: 'Davis' },
+      { firstName: 'William', lastName: 'Brown' },
+      { firstName: 'Sophia', lastName: 'Taylor' },
+      { firstName: 'James', lastName: 'Anderson' },
     ],
   },
   {
-    course: "History",
+    course: 'History',
     students: [
-      { firstName: "Alexander", lastName: "Miller" },
-      { firstName: "Olivia", lastName: "Wilson" },
-      { firstName: "Isabella", lastName: "Moore" },
-      { firstName: "Ethan", lastName: "Martin" },
-      { firstName: "Charlotte", lastName: "Lee" },
-      { firstName: "Lucas", lastName: "Clark" },
+      { firstName: 'Alexander', lastName: 'Miller' },
+      { firstName: 'Olivia', lastName: 'Wilson' },
+      { firstName: 'Isabella', lastName: 'Moore' },
+      { firstName: 'Ethan', lastName: 'Martin' },
+      { firstName: 'Charlotte', lastName: 'Lee' },
+      { firstName: 'Lucas', lastName: 'Clark' },
     ],
   },
   {
-    course: "Physics",
+    course: 'Physics',
     students: [
-      { firstName: "Liam", lastName: "Hall" },
-      { firstName: "Ava", lastName: "Lewis" },
-      { firstName: "Noah", lastName: "Walker" },
-      { firstName: "Mia", lastName: "Allen" },
-      { firstName: "Mason", lastName: "Young" },
-      { firstName: "Ella", lastName: "King" },
-      { firstName: "Logan", lastName: "Scott" },
+      { firstName: 'Liam', lastName: 'Hall' },
+      { firstName: 'Ava', lastName: 'Lewis' },
+      { firstName: 'Noah', lastName: 'Walker' },
+      { firstName: 'Mia', lastName: 'Allen' },
+      { firstName: 'Mason', lastName: 'Young' },
+      { firstName: 'Ella', lastName: 'King' },
+      { firstName: 'Logan', lastName: 'Scott' },
     ],
   },
 ];
@@ -2018,9 +2018,9 @@ function getStudents(arr) {
 ```javascript
 function getStudents(arr) {
   return arr
-    .map((mentor) => mentor.students) // Get all students arrays
+    .map(mentor => mentor.students) // Get all students arrays
     .flat() // Flatten into a single array
-    .map((student) => `${student.firstName} ${student.lastName}`);
+    .map(student => `${student.firstName} ${student.lastName}`);
 }
 ```
 
@@ -2031,11 +2031,11 @@ function getStudents(arr) {
 ### 🟢 48 - Spinal Case
 
 ```javascript
-console.log(spinalCase("Title Case Example")); //title-case-example
-console.log(spinalCase("dot.case.example")); //dot-case-example
-console.log(spinalCase("SCREAMING_SNAKE_CASE_EXAMPLE")); //screaming-snake-case-example
-console.log(spinalCase("snake_case_example")); //snake-case-example
-console.log(spinalCase("PascalCaseExample")); //pascal-case-example
+console.log(spinalCase('Title Case Example')); //title-case-example
+console.log(spinalCase('dot.case.example')); //dot-case-example
+console.log(spinalCase('SCREAMING_SNAKE_CASE_EXAMPLE')); //screaming-snake-case-example
+console.log(spinalCase('snake_case_example')); //snake-case-example
+console.log(spinalCase('PascalCaseExample')); //pascal-case-example
 
 function spinalCase(str) {
   //Write a function that transforms various-case string to spinal-case
@@ -2049,8 +2049,8 @@ function spinalCase(str) {
   return (
     str
       // Replace spaces and underscores with a hyphen
-      .replace(/\s|_|\./g, "-")
-      .replace(/([a-z])([A-Z])/g, "$1-$2")
+      .replace(/\s|_|\./g, '-')
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
       .toLowerCase()
   );
 }
@@ -2059,19 +2059,20 @@ function spinalCase(str) {
 </details>
 
 ---
+
 ### 🟡 49 - Animal Groups
 
 ```javascript
 const animals = [
-  { name: "Lion", species: "Big Cat" },
-  { name: "Tiger", species: "Big Cat" },
-  { name: "Elephant", species: "Mammal" },
-  { name: "Eagle", species: "Bird" },
-  { name: "Shark", species: "Fish" },
-  { name: "Falcon", species: "Bird" },
-  { name: "Dolphin", species: "Mammal" },
-  { name: "Jackal", species: "" },
-  { name: "Salmon", species: "" },
+  { name: 'Lion', species: 'Big Cat' },
+  { name: 'Tiger', species: 'Big Cat' },
+  { name: 'Elephant', species: 'Mammal' },
+  { name: 'Eagle', species: 'Bird' },
+  { name: 'Shark', species: 'Fish' },
+  { name: 'Falcon', species: 'Bird' },
+  { name: 'Dolphin', species: 'Mammal' },
+  { name: 'Jackal', species: '' },
+  { name: 'Salmon', species: '' },
 ];
 
 console.log(groupAnimalsBySpecies(animals));
@@ -2136,18 +2137,19 @@ function groupAnimalsBySpecies(arr) {
 
 ```javascript
 function groupAnimalsBySpecies(arr) {
-  return Object.groupBy(arr, (animal) => {
+  return Object.groupBy(arr, animal => {
     if (animal.species) {
       return animal.species;
     }
-    return "Unknown";
+    return 'Unknown';
   });
 }
 ```
+
 ```javascript
 function groupAnimalsBySpecies(arr) {
   return arr.reduce((acc, animal) => {
-    const species = animal.species || "Unknown";
+    const species = animal.species || 'Unknown';
 
     if (acc[species]) {
       acc[species].push(animal);
@@ -2236,10 +2238,11 @@ function isValidSudoku(board) {
     }
 
     return newBoard;
-  }
-  // 🔰 genarate horizontal-flow from vertical columns
-  function verticalProjection(board) {
-    let newBoard = [];
+
+}
+// 🔰 genarate horizontal-flow from vertical columns
+function verticalProjection(board) {
+let newBoard = [];
 
     for (let i = 0; i < 9; i++) {
       let newArr = [];
@@ -2249,11 +2252,13 @@ function isValidSudoku(board) {
       newBoard.push(newArr);
     }
     return newBoard;
-  }
 
-  return Check(board) && Check(verticalProjection(board)) && Check(gridProjection(board));
 }
-```
+
+return Check(board) && Check(verticalProjection(board)) && Check(gridProjection(board));
+}
+
+````
 AI solution
 
 ```javascript
@@ -2285,7 +2290,7 @@ function isValidSudoku(board) {
   return true; // No duplicates found, board is valid
 }
 
-```
+````
 
 </details>
 
@@ -2352,21 +2357,23 @@ function knightVsBishop(knightPosition, bishopPosition) {
       }
     }
     return result;
-  }
 
-  function isArrayInArray(arrayOfArrays, singleArray) {
-    return arrayOfArrays.some(arr => JSON.stringify(arr) === JSON.stringify(singleArray));
-  }
-
-  const knightMoves = possibleMoves(knightPosition, 'knight');
-  if (isArrayInArray(knightMoves, bishopPosition)) return 'Knight';
-
-  const bishopMoves = possibleMoves(bishopPosition, 'bishop');
-  if (isArrayInArray(bishopMoves, knightPosition)) return 'Bishop';
-
-  return 'None';
 }
-```
+
+function isArrayInArray(arrayOfArrays, singleArray) {
+return arrayOfArrays.some(arr => JSON.stringify(arr) === JSON.stringify(singleArray));
+}
+
+const knightMoves = possibleMoves(knightPosition, 'knight');
+if (isArrayInArray(knightMoves, bishopPosition)) return 'Knight';
+
+const bishopMoves = possibleMoves(bishopPosition, 'bishop');
+if (isArrayInArray(bishopMoves, knightPosition)) return 'Bishop';
+
+return 'None';
+}
+
+````
 AI version
 
 ```javascript
@@ -2387,7 +2394,7 @@ function knightVsBishop(np, bp) {
 
   return 'None';
 }
-```
+````
 
 </details>
 
@@ -2430,6 +2437,7 @@ function updateQuantity(arr, itemName, newQuantity) {
   });
 }
 ```
+
 .with method
 
 ```javascript
@@ -2475,6 +2483,7 @@ function findSingle(arr) {
   }, 0);
 }
 ```
+
 with algorithm
 
 ```javascript
@@ -2498,6 +2507,7 @@ function findSingle(arr) {
 </details>
 
 ---
+
 ### 🟢 54 - Find By Largest Amount
 
 ```javascript
@@ -2530,6 +2540,7 @@ function highestAmountObject(arr, property) {
 </details>
 
 ---
+
 ### 🟡 55 - Water Container
 
 ```javascript
@@ -2605,6 +2616,47 @@ function numberToAlphabet(num) {
 </details>
 
 ---
+
+### 🟢 57 - Recursive Flatten
+
+```javascript
+let nestedArray = [1, [2, [3, [4, [5, [8, [8]]]]], 5], 6, [7, 8]];
+console.log(flattenArray(nestedArray)); //🔰 [1, 2, 3, 4, 5, 6, 7, 8]
+
+function flattenArray(arr) {
+  //🔰 Write a function that flattens nested array with Recursion
+  //🔰 what is another and most simple way?
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function flattenArray(arr) {
+  let result = [];
+
+  arr.forEach(item => {
+    if (Array.isArray(item)) {
+      result = result.concat(flattenArray(item));
+    } else {
+      result.push(item);
+    }
+  });
+
+  return result;
+}
+```
+
+```javascript
+function flattenArray(arr) {
+  return arr.flat(Infinity);
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
