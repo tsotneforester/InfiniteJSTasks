@@ -35,6 +35,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | reduce    | 1, 54, 58 |
 | while     |    56     |
 | recursion |    57     |
+| every     |    59     |
 
 ---
 
@@ -2661,7 +2662,7 @@ function flattenArray(arr) {
 
 ```javascript
 const arr = [-3, 4.8, 5, 3, -3.2];
-console.log(squareList(arr)); //🔰 [25, 9,]
+console.log(squareList(arr)); //🔰 [25, 9]
 
 function squareList(arr) {
   // Write a function that returns the accumulator array, which contains the squares of all positive integers from the input array.
@@ -2678,6 +2679,48 @@ function squareList(arr) {
     }
     return acc;
   }, []);
+}
+```
+
+</details>
+
+---
+
+### 🟡 59 - Store and Order
+
+```javascript
+const store = [
+  { apples: 10, bananas: 5, oranges: 8 },
+  { bananas: 3, oranges: 10 },
+  { apples: 15, bananas: 7, oranges: 5, grapes: 12 },
+  { apples: 0, bananas: 2, oranges: 5 },
+  { apples: 5, bananas: 10, oranges: 2, grapes: 8 },
+];
+
+const order = { apples: 5, bananas: 5, oranges: 5 };
+
+function whatIsInAName(collection, object) {
+  //we have collection of store inventories and the minimum inventory requirements
+  //for an order.
+  //Write a function to find stores that can fulfill an order with at least the
+  //specified quantities of apples, bananas, and oranges.
+}
+
+console.log(whatIsInAName(store, order));
+
+// [
+//   { apples: 10, bananas: 5, oranges: 8 },
+//   { apples: 15, bananas: 7, oranges: 5, grapes: 12 },
+// ];
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function whatIsInAName(collection, object) {
+  const keys = Object.keys(object);
+
+  return collection.filter(obj => keys.every(key => obj[key] >= object[key]));
 }
 ```
 
