@@ -2728,6 +2728,32 @@ function whatIsInAName(collection, object) {
 
 ---
 
+### 🟢 60 - Sum of Integers
+
+```javascript
+console.log(sumTo(100)); // 100+99 ... +2+1 = 5050
+
+function sumTo(n) {
+  // write a function that computes the sum of all integers from 1 up to a given integer n. For example, if n is 5, the function will return (1 + 2 + 3 + 4 + 5 = 15).
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function sumTo(n) {
+  if (n === 1) {
+    return 1;
+  }
+
+  return n + sumTo(n - 1);
+}
+```
+
+</details>
+
+---
+
 <!--
 
 ### 🟢🔴🟡
