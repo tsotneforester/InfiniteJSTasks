@@ -34,7 +34,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | :-------- | :-------: |
 | reduce    | 1, 54, 58 |
 | while     |    56     |
-| recursion |    57     |
+| recursion |  57, 60   |
 | every     |    59     |
 
 ---
@@ -2749,6 +2749,39 @@ function sumTo(n) {
   }
 
   return n + sumTo(n - 1);
+}
+```
+
+</details>
+
+---
+
+### 🟢 61 - Missing Integer
+
+```javascript
+console.log(firstMissingPositive([1, 2, 0])); // Output: 3
+console.log(firstMissingPositive([3, 4, -1, 1])); // Output: 2
+console.log(firstMissingPositive([7, 8, 9, 11, 12])); // Output: 1
+
+function firstMissingPositive(arr) {
+  //write a function that returnes smallest missing positive integer from passed array
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function firstMissingPositive(arr) {
+  const sorted = arr.filter(num => num > 0).sort((a, b) => a - b);
+
+  let smallestMissing = 1;
+  for (let i = 0; i < sorted.length; i++) {
+    if (sorted[i] === smallestMissing) {
+      smallestMissing++;
+    }
+  }
+
+  return smallestMissing;
 }
 ```
 
