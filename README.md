@@ -2764,7 +2764,8 @@ console.log(firstMissingPositive([3, 4, -1, 1])); // Output: 2
 console.log(firstMissingPositive([7, 8, 9, 11, 12])); // Output: 1
 
 function firstMissingPositive(arr) {
-  //write a function that returnes smallest missing positive integer from passed array
+  //write a function that returnes smallest missing positive
+  //integer from passed array
 }
 ```
 
@@ -2782,6 +2783,44 @@ function firstMissingPositive(arr) {
   }
 
   return smallestMissing;
+}
+```
+
+</details>
+
+---
+
+### 🟢 62 - Array Chunks
+
+```javascript
+const nums = [19, 10, 3, 7, 9, 8, 5, 2, 1, 17, 16, 14, 12, 18, 6, 13, 11, 20, 4, 15];
+const chunkSize = 4;
+
+console.log(chunkArray(nums, chunkSize));
+
+// [
+//   [19, 10, 3, 7],
+//   [9, 8, 5, 2],
+//   [1, 17, 16, 14],
+//   [12, 18, 6, 13],
+//   [11, 20, 4, 15],
+// ];
+
+function chunkArray(arr, size) {
+  // write a function that splits an array into smaller
+  // chunks (sub-arrays) of a specified size
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function chunkArray(arr, size) {
+  const result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
 }
 ```
 
