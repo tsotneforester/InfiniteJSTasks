@@ -36,6 +36,7 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | while     |    56     |
 | recursion |  57, 60   |
 | every     |    59     |
+| slice     |    62     |
 
 ---
 
@@ -2821,6 +2822,59 @@ function chunkArray(arr, size) {
     result.push(arr.slice(i, i + size));
   }
   return result;
+}
+```
+
+</details>
+
+---
+
+### 🟢 63 - Rotate matrix
+
+```javascript
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(rotate(matrix));
+
+// [
+//   [7, 4, 1],
+//   [8, 5, 2],
+//   [9, 6, 3],
+// ];
+
+function rotate(arr) {
+  //You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function rotate(arr) {
+  arr.reverse();
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let temp = [];
+    for (let ii = 0; ii < arr.length; ii++) {
+      temp.push(arr[ii][i]);
+    }
+    result.push(temp);
+  }
+  return result;
+}
+```
+
+Better One:
+
+```javascript
+function rotate(matrix) {
+  const reversed = [...matrix].reverse();
+  return reversed[0].map((_, colIndex) => reversed.map(row => row[colIndex]));
 }
 ```
 
