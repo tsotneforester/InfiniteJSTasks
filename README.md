@@ -115,13 +115,13 @@ function countPersonsByLevel(arr, property) {
 Do you remember Nintendo’s Super Mario Brothers? Mario must ascend a bunch of right-aligned, left-aligned pyramid of blocks. You must write function, that will receive number from 1 to 9 and build that height pyramids in console, use "#" as building block.
 
 ```javascript
-buildRightAligned(5);
+buildLeftAligned(5);
 // #
 // ##
 // ###
 // ####
 // #####
-buildLeftAligned(5);
+buildRightAligned(5);
 //     #
 //    ##
 //   ###
@@ -138,13 +138,13 @@ buildPyramid(5);
 <details><summary><b>Answer</b></summary>
 
 ```javascript
-function buildRightAligned(height) {
+function buildLeftAligned(height) {
   for (let i = 1; i <= height; i++) {
     console.log('#'.repeat(i));
   }
 }
 
-function buildRightAligned(height) {
+function buildLeftAligned(height) {
   let result = '';
   for (let i = 0; i <= height; i++) {
     result += '#';
@@ -152,7 +152,7 @@ function buildRightAligned(height) {
   }
 }
 
-function buildLeftAligned(height) {
+function buildRightAligned(height) {
   let result = '';
   for (let i = 0; i < height; i++) {
     result += '#';
@@ -160,7 +160,7 @@ function buildLeftAligned(height) {
   }
 }
 
-function buildLeftAligned(height) {
+function buildRightAligned(height) {
   for (let i = 1; i <= height; i++) {
     console.log(' '.repeat(height - i) + '#'.repeat(i));
   }
