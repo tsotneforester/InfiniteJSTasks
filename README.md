@@ -37,6 +37,8 @@ The origin of the tasks is very diverse: I had to thank [CS50](https://pll.harva
 | recursion |  57, 60   |
 | every     |    59     |
 | slice     |    62     |
+| fill      |    64     |
+| map       |    64     |
 
 ---
 
@@ -2875,6 +2877,45 @@ Better One:
 function rotate(matrix) {
   const reversed = [...matrix].reverse();
   return reversed[0].map((_, colIndex) => reversed.map(row => row[colIndex]));
+}
+```
+
+</details>
+
+---
+
+### 🟢 64 - Padding Arrays
+
+```javascript
+const arr = [[3], [1, 2], [1, 1, 1], []];
+
+console.log(padMatrix(arr));
+
+// [
+//   [0, 0, 3],
+//   [0, 1, 2],
+//   [1, 1, 1],
+//   [0, 0, 0],
+// ];
+
+function padMatrix(arrayOfArrays) {
+  // Write a function that ensures that all inner arrays in the input 2D array have the same length by padding shorter arrays with zeros on the left.
+}
+```
+
+<details><summary><b>Answer</b></summary>
+
+```javascript
+function padMatrix(arrayOfArrays) {
+  let max = Math.max(...arrayOfArrays.map(arr => arr.length));
+
+  return arrayOfArrays.map(currentArray => {
+    const zerosNeeded = max - currentArray.length;
+
+    const padding = zerosNeeded > 0 ? Array(zerosNeeded).fill(0) : [];
+
+    return [...padding, ...currentArray];
+  });
 }
 ```
 
